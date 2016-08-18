@@ -1,0 +1,817 @@
+body {
+    background-color: #222;
+    background-image: url(/img/outlets.png);
+}
+
+a {
+    color: #bbb;
+}
+
+.container-fluid {
+    margin: auto;
+    height: auto;
+    color: #888;
+}
+
+.michael {
+    position: fixed;
+    left: 790px;
+    top: 35px;
+    font-size: 1.7em;
+}
+
+.nameline {
+    position: relative;
+    top: -3px;
+    color: #ee0000;
+    font-size: 0.8em;
+}
+
+.mail {
+    position: fixed;
+    left: 680px;
+    top: 60px;
+
+}
+
+.mailsymbol {
+    width: 30px;
+    height: 30px;
+}
+
+.portfolio {
+    width: 400px;
+    position: relative;
+    left: 219px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #bbb;
+    background-color: rgba(50,50,80,0.2);
+}
+
+.portfiller {
+    position: relative;
+    left: 219px;
+    padding: 15px;
+    width: 400px;
+    height: 60px;
+}
+
+.portborder1 {
+    position: relative;
+    left: 219px;
+    padding: 10px;
+    width: 400px;
+    height: 30px;
+    border: 2px solid #000;
+    background-color: rgba(10,80,160,0.3);
+    margin-bottom: 30px;
+}
+.portfront {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    left: 219px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+
+
+}
+
+.slidecontainer1 {
+    width: 400px;
+    height: 159px;
+    position: relative;
+    top: -15px;
+    left: -15px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+}
+
+.slidecontainer2 {
+    width: 400px;
+    height: 159px;
+    position: relative;
+    top: -15px;
+    left: -15px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+}
+
+.slidecontainer3 {
+    width: 400px;
+    height: 159px;
+    position: relative;
+    top:  -15px;
+    left: -15px;
+    border: 1px solid #bbb;
+}
+
+/*This is the start of the slide show animation*/
+
+.slide {
+    position:absolute;
+    width: 398px;
+    height: 157px;
+    left: 0px;
+    top: 0px;
+}
+
+.slide2 {
+    position:absolute;
+    width: 398px;
+    height: 157px;
+    left: 0px;
+    top: 0px;
+}
+
+.slide3 {
+    position:absolute;
+    width: 398px;
+    height: 157px;
+    left: 0px;
+    top: 0px;
+}
+
+.slide:nth-child(1) {
+    -webkit-animation: fade 24s 18s infinite;
+    z-index:10;
+}
+
+.slide:nth-child(2) {
+    -webkit-animation: fade 24s 12s infinite;
+    z-index:10;
+}
+
+.slide:nth-child(3) {
+    -webkit-animation: fade 24s 6s infinite;
+    z-index:10;
+}
+
+.slide:nth-child(4) {
+    -webkit-animation: fade 24s 0s infinite; 
+    z-index:10;
+}
+
+
+/*-----------------------------------------------------*/
+
+
+.slide2:nth-child(1) {
+    -webkit-animation: fadetwo 16s 12s infinite;
+    z-index:10;
+}
+
+.slide2:nth-child(2) {
+    -webkit-animation: fadetwo 16s 8s infinite;
+    z-index:10;
+}
+
+.slide2:nth-child(3) {
+    -webkit-animation: fadetwo 16s 4s infinite;
+    z-index:10;
+}
+
+.slide2:nth-child(4) {
+    -webkit-animation: fadetwo 16s 0s infinite; 
+    z-index:10;   
+}
+
+/*-----------------------------------------------------*/
+
+
+.slide3:nth-child(1) {
+    -webkit-animation: fadethree 32s 24s infinite;
+    z-index:10;
+}
+
+.slide3:nth-child(2) {
+    -webkit-animation: fadethree 32s 16s infinite;
+    z-index:10;
+}
+
+.slide3:nth-child(3) {
+    -webkit-animation: fadethree 32s 8s infinite;
+    z-index:10;
+}
+
+.slide3:nth-child(4) {
+    -webkit-animation: fadethree 32s 0s infinite; 
+    z-index:10;
+}
+
+
+@-webkit-keyframes fade {
+    0%{
+      opacity: 1;
+   }
+   15% {
+      opacity:1;
+   }
+   25%{
+      opacity: 0;
+   }
+   90% {
+      opacity:0;
+   }
+   100% {
+      opacity:1;
+   }
+}
+
+@-webkit-keyframes fadetwo {
+    0%{
+      opacity: 1;
+   }
+   15% {
+      opacity:1;
+   }
+   25%{
+      opacity: 0;
+   }
+   90% {
+      opacity:0;
+   }
+   100% {
+      opacity:1;
+   }
+}
+
+
+@-webkit-keyframes fadethree {
+    0%{
+      opacity: 1;
+   }
+   15% {
+      opacity:1;
+   }
+   25%{
+      opacity: 0;
+   }
+   90% {
+      opacity:0;
+   }
+   100% {
+      opacity:1;
+   }
+}
+/*End of Slide show animation*/
+
+
+.portborder2 {
+    position: relative;
+    left: 219px;
+    width: 400px;
+    height: 20px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    background-color: rgba(10,80,160,0.3);
+    margin-top: 50px;
+}
+
+.info {
+    width: 500px;
+    height: 400px;
+    position: fixed;
+    left: 700px;
+    top: 180px;
+    padding: 15px;
+}
+
+.formtext {
+    font-size: 1.2em;
+    border: 3px solid rgba(50,50,80,0.8);
+}
+
+.infoborder1 {
+    width: 150px;
+    height: 1px;
+    background-color: #bbb;
+    position: fixed;
+    left: 1049px;
+    top: 180px;
+}
+
+.infoborder2 {
+    width: 150px;
+    height: 1px;
+    background-color: #bbb;
+    position: fixed;
+    left: 700px;
+    top: 579px;
+}
+
+.infoborder3 {
+    width: 1px;
+    height: 150px;
+    background-color: #bbb;
+    position: fixed;
+    left: 700px;
+    top: 430px;
+}
+
+.infoborder4 {
+    width: 1px;
+    height: 150px;
+    background-color: #bbb;
+    position: fixed;
+    left: 1199px;
+    top: 180px;
+}
+
+.mainbg {
+    position: fixed;
+}
+
+.circle {
+    position: fixed;
+    left: 1100px;
+    top: -62px;
+    opacity: 0.3;
+}
+
+.portimage {
+    width: 365px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.aboutimage {
+    width: 170px;
+    height: 210px;
+    float: left;
+    margin-right: 15px;
+}
+
+.bannerfull {
+    width: 1000px;
+    height: 30px;
+    background-color: rgba(10,80,160,0.3);
+    position: relative;
+    right: 20px;
+    top: 28px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    display: none;
+}
+
+.bannerleft {
+    width: 200px;
+    height: 30px;
+    background-color: rgba(10,80,160,0.3);
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+
+}
+
+.bannerright {
+    width: 60%;
+    height: 30px;
+    background-color: rgba(10,80,160,0.3);
+    position: fixed;
+    left: 640px;
+    top: 60px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.verttitle {
+    font-size: 2.5em;
+    transform: rotate(270deg);
+    transform-origin: left top 0;
+    position: fixed;
+    left: 164px;
+    top: 472px;
+    color: #bbb
+}
+
+.hortitle {
+    font-size: 2.5em;
+    display: none;
+    width: 400px;
+    background-color: rgba(10,80,160,0.3);
+    border-top: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    text-align: center;
+}
+
+.navb {
+    width: 240px;
+    height: 30px;
+    position: fixed;
+    left: 660px;
+    top: 120px;
+}
+
+.butn {
+    width: 80px;
+    margin-left: -6px;
+    font-size: 1.1em;
+    display: inline-block;
+    border-right: 2px solid #bbb;
+    border-left: 2px solid #bbb;
+    text-align: center;
+}
+
+.butn:nth-child(1) {
+    border-left: 0px;
+}
+
+.butn:nth-child(3) {
+    border-right: 0px;
+}
+
+.footerleft {
+    width: 200px;
+    height: 20px;
+    background-color: rgba(10,80,160,0.3);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.footerright {
+    width: 60%;
+    height: 20px;
+    background-color: rgba(10,80,160,0.3);
+    position: fixed;
+    left: 640px;
+    bottom: 0px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000
+}
+
+.footerfull {
+    position: relative;
+    margin: auto;
+    width: 1000px;
+    height: 20px;
+    border-top: 2px solid #000;
+    background-color: rgba(10,80,160,0.3);
+    display: none;
+}
+
+.butn:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color: #006699;
+}
+
+#home {
+    display: block;
+}
+
+#about {
+    display: none;
+    opacity: 0;
+}
+
+#contact {
+    display: none;
+    opacity: 0;
+}
+
+#formname {
+    width: 60%;
+    height: 30px;
+}
+
+#formnumber {
+    width: 60%;
+    height: 30px;
+    position: relative;
+    top: 10px;
+}
+#formemail {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    top: 20px;
+}
+
+#formmessage {
+    width: 100%;
+    height: 200px;
+    font-size: 1.2em;
+    border: 3px solid rgba(50,50,80,0.8);
+    position: relative;
+    top: 30px;
+}
+
+#formsubmit {
+    position: relative;
+    top: 40px;
+    width: 120px;
+    height: 30px;
+    border: 3px solid rgba(50,50,80,0.8);
+
+}
+
+@media (max-width: 1200px) {
+    .michael {
+        left: 590px;
+    }
+    .info {
+        left: 500px;
+    }
+    .infoborder1 {
+        left: 850px;
+    }
+    .infoborder2 {
+        left: 500px;
+    }
+    .infoborder3 {
+        left: 500px;
+    }
+    .infoborder4 {
+        left: 1000px;
+    }
+    .portfolio {
+        clear: both;
+        left:50px;
+    }
+    .portfront {
+        clear: both;
+        left:50px;
+    }
+    .portfiller {
+        clear: both;
+        left:50px;
+    }
+    .portborder1 {
+        clear: both;
+        left:50px;
+    }
+    .portborder2 {
+        clear: both;
+        left:50px;
+    }
+    .verttitle {
+        left: 7px;
+    }
+    .bannerleft {
+        display: none;
+    }
+    .bannerright {
+        left: 500px;
+    }
+    .navb {
+        left: 520px;
+    }
+    .footerleft {
+        display: none;
+    }
+    .footerright {
+        left:500px;
+    }
+    .circle {
+        left: 900px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .michael {
+        position: relative;
+        left: 20px;
+    }
+    .info {
+        position: relative;
+        margin: auto;
+        left: 0px;
+        top: -232px;
+    }
+    .infoborder1 {
+        position: relative;
+        margin: auto;
+        left: 175px;
+        top: 70px;
+    }
+    .infoborder2 {
+        position: relative;
+        margin: auto;
+        left: -175px;
+        top: 468px;
+    }
+    .infoborder3 {
+        position: relative;
+        margin: auto;
+        left: 249px;
+        top: 68px;
+    }
+    .infoborder4 {
+        position: relative;
+        margin: auto;
+        left: -250px;
+        top: 168px;
+    }
+
+    .portfolio {
+        top: -205px;
+        left: 0px;
+        margin: auto;
+        background-color: transparent;
+        border: 0px;
+    }
+    .portodd {
+        position: absolute;
+        left: 200px;
+        border-right: 1px solid #bbb;
+        border-left: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        background-color: rgba(50,50,80,0.2);
+    }
+    .porteven {
+        position: relative;
+        right: 200px;
+        margin-bottom: -10px;
+        padding-bottom: 20px;
+        border-left: 1px solid #bbb;
+        border-right: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        background-color: rgba(50,50,80,0.2);
+    }
+    .portfiller {
+        display: none;
+    }
+    .portborder1 {
+        display: none;
+    }
+    .portfront {
+        display: none;
+/*        position: relative;
+        width: 1000px;
+        margin: auto;
+        left: 0px;
+        border-right: 0px;
+        border-left: 0px;*/
+    }
+    .portborder2 {
+        display: none;
+    }
+    .verttitle {
+        display: none;
+    }
+    .hortitle {
+        display: block;
+        width: 752px;
+        margin: auto;
+        position: relative;
+        left: -9px;
+        top: -190px;
+    }
+    .bannerfull {
+        display: block;
+    }
+    .footerfull{
+        display: block;
+        top: 0px;
+    }
+    .bannerleft {
+        display: none;
+    }
+    .bannerright {
+        display: none;
+    }
+    .navb {
+        margin: auto;
+        left: 0px;
+        position: relative;
+        top: 40px;
+    }
+    .footerleft {
+        display: none;
+    }
+    .footerright {
+        display: none;
+    }
+    .circle {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 765px) {
+    .info {
+        position: relative;
+        margin: auto;
+        left: 0px;
+        top: 70px;
+        width: 380px;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        font-size: .9em;
+
+    }
+    .portfolio {
+        width: 380px;
+        top: 140px;
+        left: 0px;
+        margin: auto;
+        border-right: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        border-left: 1px solid #bbb;
+        background-color: rgba(50,50,80,0.2);
+    }
+    .portodd {
+        position: relative;
+        left: 0px;
+        border: 0px;
+        background-color: transparent;
+    }
+    .porteven {
+        position: relative;
+        left: 0px;
+        border: 0px;
+        background-color: transparent;
+    }
+    .verttitle {
+        display: none;
+    }
+    .hortitle {
+        display: block;
+        padding: 0px;
+        margin: auto;
+        position: relative;
+        left: 0px;
+        top: 140px;
+        width: 380px;
+    }
+    .bannerfull {
+        display: block;
+    }
+    .bannerleft {
+        display: none;
+    }
+    .bannerright {
+        display: none;
+    }
+    .navb {
+        margin: auto;
+        left: 0px;
+        position: relative;
+        top: 40px;
+    }
+    .footerleft {
+        display: none;
+    }
+    .footerright {
+        display: none;
+    }
+    .footerfull {
+        display: block;
+        top: 180px;
+    }
+    .infoborder1 {
+        display: none;
+    }
+    .infoborder2 {
+        display: none;
+    }
+    .infoborder3 {
+        display: none;
+    }
+    .infoborder4 {
+        display: none;
+    }
+    .portimage {
+        width: 350px;
+    }
+    .aboutimage {
+        display: none;
+    }
+    #formname {
+        width: 100%;
+    }
+    #formnumber {
+        left: 0px;
+        top:10px;
+        width: 100%;
+    }
+    #formemail {
+        top: 20px;
+        width: 100%;
+    }
+    #formmessage {
+        top:30px;
+        width: 100%;
+    }
+    #formsubmit {
+        top: 40px;
+    }
+}
