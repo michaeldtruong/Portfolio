@@ -7,9 +7,10 @@ a {
     color: #bbb;
 }
 
-.container-fluid {
-    margin: auto;
-    height: auto;
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
     color: #888;
 }
 
@@ -42,16 +43,24 @@ a {
 .portfolio {
     width: 400px;
     position: relative;
-    left: 219px;
+    left: 205px;
     padding: 15px;
     text-align: center;
     border: 1px solid #bbb;
     background-color: rgba(50,50,80,0.2);
 }
 
+.porteven {
+    height: 440px;
+}
+
+.portodd {
+    height: 440px;
+}
+
 .portfiller {
     position: relative;
-    left: 219px;
+    left: 205px;
     padding: 15px;
     width: 400px;
     height: 60px;
@@ -59,7 +68,7 @@ a {
 
 .portborder1 {
     position: relative;
-    left: 219px;
+    left: 205px;
     padding: 10px;
     width: 400px;
     height: 30px;
@@ -71,7 +80,7 @@ a {
     width: 400px;
     height: 500px;
     position: relative;
-    left: 219px;
+    left: 205px;
     padding: 15px;
     text-align: center;
     margin-bottom: 50px;
@@ -261,7 +270,8 @@ a {
 
 .portborder2 {
     position: relative;
-    left: 219px;
+    left: 202px;
+    top: 2px;
     width: 400px;
     height: 20px;
     border-top: 2px solid #000;
@@ -346,11 +356,10 @@ a {
 }
 
 .bannerfull {
-    width: 1000px;
+    width: 100%;
     height: 30px;
     background-color: rgba(10,80,160,0.3);
     position: relative;
-    right: 20px;
     top: 28px;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
@@ -454,7 +463,7 @@ a {
 .footerfull {
     position: relative;
     margin: auto;
-    width: 1000px;
+    width: 100%;
     height: 20px;
     border-top: 2px solid #000;
     background-color: rgba(10,80,160,0.3);
@@ -583,67 +592,69 @@ a:hover {
 }
 
 @media (max-width: 1000px) {
+
+    .container {
+        width: 765px;
+        height: 2050px;
+    }
     .michael {
-        position: relative;
+        width: 100%;
+        text-align: left;
+        position: absolute;
         left: 20px;
     }
     .info {
-        position: relative;
-        margin: auto;
-        left: 0px;
-        top: -232px;
+        position: absolute;
+        left: 130px;
+        top: 200px;
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
     }
     .infoborder1 {
-        position: relative;
-        margin: auto;
-        left: 175px;
-        top: 70px;
+        display: none;
     }
     .infoborder2 {
-        position: relative;
-        margin: auto;
-        left: -175px;
-        top: 468px;
+        display: none;
     }
     .infoborder3 {
-        position: relative;
-        margin: auto;
-        left: 249px;
-        top: 68px;
+        display: none;
     }
     .infoborder4 {
-        position: relative;
-        margin: auto;
-        left: -250px;
-        top: 168px;
+        display: none;
     }
 
     .portfolio {
-        top: -205px;
+        position: absolute;
+        top: 708px;
+        width: 100%;
         left: 0px;
-        margin: auto;
         background-color: transparent;
         border: 0px;
     }
     .portodd {
         position: absolute;
-        left: 200px;
+        right: 2px;
+        width: 50%;
+        height: 440px;
+        padding: 10px;
         border-right: 1px solid #bbb;
         border-left: 1px solid #bbb;
         border-bottom: 1px solid #bbb;
-        margin-bottom: 0px;
-        padding-bottom: 20px;
         background-color: rgba(50,50,80,0.2);
     }
     .porteven {
         position: relative;
-        right: 200px;
-        margin-bottom: -10px;
-        padding-bottom: 20px;
+        left: -14px;
+        width: 50%;
+        height: 440px;
+        padding: 10px;
         border-left: 1px solid #bbb;
         border-right: 1px solid #bbb;
         border-bottom: 1px solid #bbb;
         background-color: rgba(50,50,80,0.2);
+    }
+    .portimage{
+        width: 100%;
     }
     .portfiller {
         display: none;
@@ -653,12 +664,6 @@ a:hover {
     }
     .portfront {
         display: none;
-/*        position: relative;
-        width: 1000px;
-        margin: auto;
-        left: 0px;
-        border-right: 0px;
-        border-left: 0px;*/
     }
     .portborder2 {
         display: none;
@@ -668,18 +673,29 @@ a:hover {
     }
     .hortitle {
         display: block;
-        width: 752px;
+        width: 762px;
         margin: auto;
         position: relative;
-        left: -9px;
-        top: -190px;
+        left: -14px;
+        top: 670px;
+        border: 1px solid #bbb;
     }
     .bannerfull {
+        position: absolute;
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        left: 0px;
+        top: 60px;
         display: block;
+        width: 100%;
     }
     .footerfull{
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        left: 0px;
+        position: absolute;
         display: block;
-        top: 0px;
+        top: 2100px;
     }
     .bannerleft {
         display: none;
@@ -688,10 +704,9 @@ a:hover {
         display: none;
     }
     .navb {
-        margin: auto;
-        left: 0px;
-        position: relative;
-        top: 40px;
+        position: absolute;
+        left: 260px;
+        top: 150px;
     }
     .footerleft {
         display: none;
@@ -707,22 +722,31 @@ a:hover {
 }
 
 @media (max-width: 765px) {
-    .info {
-        position: relative;
-        margin: auto;
+
+    .container {
+        width: 400px;
+        height: 3200px;
+    }
+    .michael {
+        width: :100%;
+        text-align: center;
         left: 0px;
-        top: 70px;
-        width: 380px;
+    }
+
+    .info {
+        position: absolute;
+        top: 200px;
+        left: 0px;
+        width: 100%;
         border-top: 1px solid #bbb;
         border-bottom: 1px solid #bbb;
         font-size: .9em;
 
     }
     .portfolio {
-        width: 380px;
-        top: 140px;
+        width: 100%;
         left: 0px;
-        margin: auto;
+        top: 720px;
         border-right: 1px solid #bbb;
         border-bottom: 1px solid #bbb;
         border-left: 1px solid #bbb;
@@ -732,12 +756,14 @@ a:hover {
         position: relative;
         left: 0px;
         border: 0px;
+        width: 100%;
         background-color: transparent;
     }
     .porteven {
         position: relative;
         left: 0px;
         border: 0px;
+        width: 100%;
         background-color: transparent;
     }
     .verttitle {
@@ -745,12 +771,10 @@ a:hover {
     }
     .hortitle {
         display: block;
-        padding: 0px;
-        margin: auto;
-        position: relative;
+        width: 100%;
+        text-align: center;
+        position: absolute;
         left: 0px;
-        top: 140px;
-        width: 380px;
     }
     .bannerfull {
         display: block;
@@ -763,9 +787,10 @@ a:hover {
     }
     .navb {
         margin: auto;
+        position: absolute;
+        width: 100%;
+        text-align: center;
         left: 0px;
-        position: relative;
-        top: 40px;
     }
     .footerleft {
         display: none;
@@ -775,7 +800,7 @@ a:hover {
     }
     .footerfull {
         display: block;
-        top: 180px;
+        top: 3450px;
     }
     .infoborder1 {
         display: none;
