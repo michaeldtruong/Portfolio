@@ -23,8 +23,21 @@
                 <div class="links" id="goContact">Contact</div>
             </div>
             <div class="name"><h1 class="nameHeader">Michael Truong</h1></div>
-            <div class="portfolio"></div>
-            <div class="about"></div>
+            <div class="portfolio">
+                <div class="portContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div class="portImage"><img src="/img/placeholder.png"></div>
+            </div>
+            <div class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="aboutPicture"><img src="/img/placeholder.png"></div>
             <div class="blog"></div>
             <div class="contact"></div>
@@ -34,6 +47,90 @@
     	
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script>
+
+            var transitionTime = 1000;
+            var contentShowTime = 500;
+            var contentDelayTime = 800;
+
+            function hideAll() {
+                $(".about, .aboutPicture, .portfolio").animate({
+                    opacity: "0"
+                }, 600);
+            }
+
+            $(".name").click(function(){
+                hideAll();
+                $(".navBar").animate({
+                    top: "315px",
+                    left: "215px"
+                },transitionTime);
+                $(".vline").animate({
+                    top: "50px",
+                    left: "200px"
+                }, transitionTime);
+                $(".name").animate({
+                    top: "255px",
+                    left: "50px"
+                }, transitionTime);
+                $(".hline").animate({
+                    top: "300px",
+                    left: "0px"
+                }, transitionTime);
+            });
+
+            $("#goAbout").click(function(){
+                hideAll();
+                $(".navBar").animate({
+                    top: "275px",
+                    left: "475px"
+                },transitionTime);
+                $(".vline").animate({
+                    left: "460px"
+                }, transitionTime);
+                $(".name").animate({
+                    top: "215px",
+                    left: "190px"
+                }, transitionTime);
+                $(".hline").animate({
+                    top: "260px",
+                    left: "0px"
+                }, transitionTime);
+                setTimeout(function() {
+                    $(".about").animate({
+                        opacity: "1"
+                    }, contentShowTime);
+                    $(".aboutPicture").animate({
+                        opacity: "1"
+                    }, contentShowTime);
+                }, contentDelayTime);
+            });
+
+            $("#goPortfolio").click(function(){
+                hideAll();
+                $(".navBar").animate({
+                    top: "165px",
+                    left: "715px"
+                },transitionTime);
+                $(".vline").animate({
+                    left: "700px"
+                }, transitionTime);
+                $(".name").animate({
+                    top: "105px",
+                    left: "50px"
+                }, transitionTime);
+                $(".hline").animate({
+                    top: "150px"
+                }, transitionTime);
+                setTimeout(function() {
+                    $(".portfolio").animate({
+                        opacity: "1"
+                    }, contentShowTime);
+                }, contentDelayTime);
+            });
+
+        </script>
 
     </body>
 </html>
