@@ -5,6 +5,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Freelance full stack developer">
+        <meta name="keywords" content="Michael Truong,Web Designer, Web Developer, UI Designer,UX Designer, Game Designer, PHP Developer, Full Stack Developer, San Antonio">
+        <meta name="author" content="Hege Refsnes">
         <title>Michael Truong</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
@@ -50,7 +53,12 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="aboutPicture"><img src="/img/placeholder.png"></div>
-            <div class="blog"></div>
+            <div class="blog">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="contactForm">
                 <form method="POST">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
@@ -79,9 +87,10 @@
             var transitionTime = 1000;
             var contentShowTime = 500;
             var contentDelayTime = 800;
+            var initialAnimationTime = 2000
 
             function hideAll() {
-                $(".about, .aboutPicture, .portfolio, .banner, .contactContent, .contactForm").animate({
+                $(".about, .aboutPicture, .portfolio, .banner, .contactContent, .contactForm, .blog").animate({
                     opacity: "0"
                 }, 600);
             }
@@ -146,6 +155,32 @@
 
             bannerAnimation();
 
+            $(".container").animate({
+                opacity: "1"
+            }, 1700);
+            $(".navBar").animate({
+                top: "315px",
+                left: "215px"
+            },initialAnimationTime);
+            $(".vline").animate({
+                top: "50px",
+                left: "200px"
+            }, initialAnimationTime);
+            $(".name").animate({
+                top: "255px",
+                left: "50px"
+            }, initialAnimationTime);
+            $(".hline").animate({
+                top: "300px",
+                left: "0px"
+            }, initialAnimationTime);
+            setTimeout(function() {
+                $(".banner").animate({
+                    opacity: "0.7"
+                }, 1000);
+            }, 1500);
+            
+
             $(".name").click(function(){
                 hideAll();
                 $(".navBar").animate({
@@ -166,7 +201,7 @@
                 }, transitionTime);
                 setTimeout(function() {
                     $(".banner").animate({
-                        opacity: "0.8"
+                        opacity: "0.7"
                     }, contentShowTime);
                 }, contentDelayTime);
             });
@@ -216,6 +251,31 @@
                 }, transitionTime);
                 setTimeout(function() {
                     $(".portfolio").animate({
+                        opacity: "1"
+                    }, contentShowTime);
+                }, contentDelayTime);
+            });
+
+            $("#goBlog").click(function(){
+                hideAll();
+                $(".navBar").animate({
+                    top: "110px",
+                    left: "125px"
+                },transitionTime);
+                $(".vline").animate({
+                    top: "50px",
+                    left: "200px"
+                }, transitionTime);
+                $(".name").animate({
+                    top: "50px",
+                    left: "50px"
+                }, transitionTime);
+                $(".hline").animate({
+                    top: "95px",
+                    left: "0px"
+                }, transitionTime);
+                setTimeout(function() {
+                    $(".blog").animate({
                         opacity: "1"
                     }, contentShowTime);
                 }, contentDelayTime);
