@@ -38,27 +38,47 @@
             </div>
             <div class="name"><h1 class="nameHeader">Michael Truong</h1></div>
             <div class="portfolio">
-                <div class="portContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                <div class="projects" id="project1">
+                    <div class="portContent"><h4>Title</h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <div class="portImage"><a href="google.com"><img src="/img/placeholder.png"></a></div>
+                </div>
+                <div class="projects" id="project2">
+                    <div class="portContent"><h4>Title</h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <div class="portImage"><img src="/img/placeholder.png"></div>
+                </div>
+                <div class="projects" id="project3">
+                    <div class="portContent"><h4>Title</h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <div class="portImage"><img src="/img/placeholder.png"></div>
+                </div>
+            </div>
+            <div class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                <div class="portImage"><img src="/img/placeholder.png"></div>
-            </div>
-            <div class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="aboutPicture"><img src="/img/placeholder.png"></div>
             <div class="blog">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="contactForm">
                 <form method="POST">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
@@ -90,8 +110,12 @@
             var initialAnimationTime = 2000
 
             function hideAll() {
+                $(".name, #goAbout, #goPortfolio, #goBlog, #goContact").css("pointerEvents", "auto");
                 $(".about, .aboutPicture, .portfolio, .banner, .contactContent, .contactForm, .blog").animate({
                     opacity: "0"
+                }, 600);
+                setTimeout(function() {
+                    $(".about, .aboutPicture, .portfolio, .banner, .contactContent, .contactForm, .blog").css("display", "none");
                 }, 600);
             }
 
@@ -149,12 +173,13 @@
                     $("#developer").animate({
                         opacity: "0"
                     }, 500);
-                    bannerAnimation();
                 }, 24000);
             }
 
             bannerAnimation();
+            setInterval(bannerAnimation, 24500);
 
+            $(".name").css("pointerEvents", "none");
             $(".container").animate({
                 opacity: "1"
             }, 1700);
@@ -200,6 +225,8 @@
                     left: "0px"
                 }, transitionTime);
                 setTimeout(function() {
+                    $(".banner").css("display", "block");
+                    $(".name").css("pointerEvents", "none");
                     $(".banner").animate({
                         opacity: "0.7"
                     }, contentShowTime);
@@ -224,6 +251,9 @@
                     left: "0px"
                 }, transitionTime);
                 setTimeout(function() {
+                    $(".about").css("display", "block");
+                    $(".aboutPicture").css("display", "block");
+                    $("#goAbout").css("pointerEvents", "none");
                     $(".about").animate({
                         opacity: "1"
                     }, contentShowTime);
@@ -250,6 +280,8 @@
                     top: "150px"
                 }, transitionTime);
                 setTimeout(function() {
+                    $(".portfolio").css("display", "block");
+                    $("#goPortfolio").css("pointerEvents", "none");
                     $(".portfolio").animate({
                         opacity: "1"
                     }, contentShowTime);
@@ -275,6 +307,8 @@
                     left: "0px"
                 }, transitionTime);
                 setTimeout(function() {
+                    $(".blog").css("display", "block");
+                    $("#goBlog").css("pointerEvents", "none");
                     $(".blog").animate({
                         opacity: "1"
                     }, contentShowTime);
@@ -300,6 +334,9 @@
                     left: "0px"
                 }, transitionTime);
                 setTimeout(function() {
+                    $(".contactContent").css("display", "block");
+                    $(".contactForm").css("display", "block");
+                    $("#goContact").css("pointerEvents", "none");
                     $(".contactContent").animate({
                         opacity: "1"
                     }, contentShowTime);
