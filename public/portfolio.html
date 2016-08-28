@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Michael Truong</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
         <link rel="stylesheet" href="/css/portfolio-new.css">
 
     </head>
@@ -14,6 +15,16 @@
 
     	<div class="container">
 
+            <div class="banner">
+                <div class="bannerSeperater">|</div>
+                <div class="bannerText bannerRight" id="designer">Designer</div>
+                <div class="bannerText bannerRight" id="developer">Developer</div>
+                <div class="bannerText bannerLeft" id="uiux">UI / UX</div>
+                <div class="bannerText bannerLeft" id="game">Game</div>
+                <div class="bannerText bannerLeft" id="web">Website</div>
+                <div class="bannerText bannerLeft" id="php">PHP</div>
+                <div class="bannerText bannerLeft" id="fullStack">Full Stack</div>
+            </div>
             <div class="hline"></div>
             <div class="vline"></div>
             <div class="navBar">
@@ -40,7 +51,22 @@
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="aboutPicture"><img src="/img/placeholder.png"></div>
             <div class="blog"></div>
-            <div class="contact"></div>
+            <div class="contactForm">
+                <form method="POST">
+                    <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
+                    <input type="text" id="formnumber" name="number" class="formtext" placeholder=" Your Contact Number">
+                    <br>
+                    <input type="text" id="formemail" name="email" class="formtext" placeholder=" Your Email*">
+                    <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*"></textarea>
+                    <button type="submit" id="formsubmit">SEND</button>
+                </form>
+            </div>
+            <div class="contactContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="external"></div>
 
     	</div>
@@ -55,10 +81,70 @@
             var contentDelayTime = 800;
 
             function hideAll() {
-                $(".about, .aboutPicture, .portfolio").animate({
+                $(".about, .aboutPicture, .portfolio, .banner, .contactContent, .contactForm").animate({
                     opacity: "0"
                 }, 600);
             }
+
+            function bannerAnimation() {
+                $("#uiux").animate({
+                    opacity: "1"
+                }, 1000);
+                $("#designer").animate({
+                    opacity: "1"
+                }, 1000);
+                setTimeout(function() {
+                    $("#uiux").animate({
+                        opacity: "0"
+                    }, 500);
+                    $("#game").animate({
+                        opacity: "1"
+                    }, 1000);
+                }, 4000);
+                setTimeout(function() {
+                    $("#game").animate({
+                        opacity: "0"
+                    }, 500);
+                    $("#web").animate({
+                        opacity: "1"
+                    }, 1000);
+                }, 8000);
+                setTimeout(function() {
+                    $("#designer").animate({
+                        opacity: "0"
+                    }, 500);
+                    $("#developer").animate({
+                        opacity: "1"
+                    }, 1000);
+                }, 12000);
+                setTimeout(function() {
+                    $("#web").animate({
+                        opacity: "0"
+                    }, 500);
+                    $("#php").animate({
+                        opacity: "1"
+                    }, 1000);
+                }, 16000);
+                setTimeout(function() {
+                    $("#php").animate({
+                        opacity: "0"
+                    }, 500);
+                    $("#fullStack").animate({
+                        opacity: "1"
+                    }, 1000);
+                }, 20000);
+                setTimeout(function() {
+                    $("#fullStack").animate({
+                        opacity: "0"
+                    }, 500);
+                    $("#developer").animate({
+                        opacity: "0"
+                    }, 500);
+                    bannerAnimation();
+                }, 24000);
+            }
+
+            bannerAnimation();
 
             $(".name").click(function(){
                 hideAll();
@@ -78,6 +164,11 @@
                     top: "300px",
                     left: "0px"
                 }, transitionTime);
+                setTimeout(function() {
+                    $(".banner").animate({
+                        opacity: "0.8"
+                    }, contentShowTime);
+                }, contentDelayTime);
             });
 
             $("#goAbout").click(function(){
@@ -125,6 +216,34 @@
                 }, transitionTime);
                 setTimeout(function() {
                     $(".portfolio").animate({
+                        opacity: "1"
+                    }, contentShowTime);
+                }, contentDelayTime);
+            });
+
+            $("#goContact").click(function(){
+                hideAll();
+                $(".navBar").animate({
+                    top: "273px",
+                    left: "125px"
+                },transitionTime);
+                $(".vline").animate({
+                    top: "50px",
+                    left: "200px"
+                }, transitionTime);
+                $(".name").animate({
+                    top: "213px",
+                    left: "50px"
+                }, transitionTime);
+                $(".hline").animate({
+                    top: "258px",
+                    left: "0px"
+                }, transitionTime);
+                setTimeout(function() {
+                    $(".contactContent").animate({
+                        opacity: "1"
+                    }, contentShowTime);
+                    $(".contactForm").animate({
                         opacity: "1"
                     }, contentShowTime);
                 }, contentDelayTime);
