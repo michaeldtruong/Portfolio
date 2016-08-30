@@ -15,8 +15,9 @@
 
     </head>
     <body>
+        <div class="loadIcon"><img src="/img/preloader.gif"></div>
 
-    	<div class="container">
+        <div class="container">
 
             <div class="banner">
                 <div class="bannerSeperater">|</div>
@@ -40,19 +41,19 @@
             <div class="portfolio">
                 <div class="projects" id="project1">
                     <div class="portContent"><h4>Memory Wars</h4>Game Design/Development, Object Oriented Programming, HTML5, CSS3, Javascript, jQuery.</div>
-                    <div class="portImage"><a href=""><img src="/img/memorywars.png"></a></div>
+                    <div class="portImage"><img src="/img/memorywars.png" class="projectPictures"></div>
                 </div>
                 <div class="projects" id="project2">
                     <div class="portContent"><h4>Weather Map</h4>UI/UX Design, API, HTML5, CSS3, Javascript, jQuery.</div>
-                    <div class="portImage"><img src="/img/weathermap.png"></div>
+                    <div class="portImage"><img src="/img/weathermap.png" class="projectPictures"></div>
                 </div>
                 <div class="projects" id="project3">
                     <div class="portContent"><h4>Alien Artifact</h4>UI/UX Design, Photoshop, HTML5, CSS3, Javascript.</div>
-                    <div class="portImage"><img src="/img/artifact.png"></div>
+                    <div class="portImage"><img src="/img/artifact.png" class="projectPictures"></div>
                 </div>
                 <div class="projects" id="project4">
                     <div class="portContent"><h4>4U2Do</h4>HTML5, CSS3, Javascript.</div>
-                    <div class="portImage"><img src="/img/todo.png"></div>
+                    <div class="portImage"><img src="/img/todo.png" class="projectPictures"></div>
                 </div>
                 <div class="projects" id="project5">
                     <div class="portContent"><h4>Knotted Fates</h4>Game Design/Development, Level Design, Parallax Mapping, Photoshop</div>
@@ -71,7 +72,7 @@
                 my passion for functionality and beauty evolved and was not long before I made my
                 first steps into the digital world of design and development.
             </div>
-            <div class="aboutPicture"><img src="/img/placeholder.png"></div>
+            <div class="aboutPicture"><img src="/img/mike.jpg" class="myPic"></div>
             <div class="blog">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -101,6 +102,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
         <script>
+
+
 
             var transitionTime = 1000;
             var contentShowTime = 500;
@@ -174,34 +177,39 @@
                 }, 24000);
             }
 
-            bannerAnimation();
-            setInterval(bannerAnimation, 24500);
-
-            $(".name").css("pointerEvents", "none");
-            $(".container").animate({
-                opacity: "1"
-            }, 1700);
-            $(".navBar").animate({
-                top: "315px",
-                left: "215px"
-            },initialAnimationTime);
-            $(".vline").animate({
-                top: "50px",
-                left: "200px"
-            }, initialAnimationTime);
-            $(".name").animate({
-                top: "255px",
-                left: "50px"
-            }, initialAnimationTime);
-            $(".hline").animate({
-                top: "300px",
-                left: "0px"
-            }, initialAnimationTime);
-            setTimeout(function() {
-                $(".banner").animate({
-                    opacity: "0.7"
+            window.onload = function() {
+                bannerAnimation();
+                setInterval(bannerAnimation, 24500);
+                $(".loadIcon").animate({
+                    opacity: "0"
+                }, 300);
+                $(".name").css("pointerEvents", "none");
+                $(".container").animate({
+                    opacity: "1"
+                }, 1700);
+                $(".navBar").animate({
+                    top: "315px",
+                    left: "215px"
+                },initialAnimationTime);
+                $(".vline").animate({
+                    top: "50px",
+                    left: "200px"
+                }, initialAnimationTime);
+                $(".name").animate({
+                    top: "255px",
+                    left: "50px"
+                }, initialAnimationTime);
+                $(".hline").animate({
+                    top: "300px",
+                    left: "0px"
+                }, initialAnimationTime);
+                setTimeout(function() {
+                    $(".banner").animate({
+                        opacity: "0.7"
+                    }, 1000);
+                    $(".loadIcon").css("display", "none");
                 }, 1000);
-            }, 1000);
+            }
             
 
             $(".name").click(function(){
