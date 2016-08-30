@@ -243,8 +243,9 @@ body {
     border: 1px solid #777;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
 	.container {
+		margin-top: 0px;
 		width: 400px;
 		height: 1500px;
 	}
