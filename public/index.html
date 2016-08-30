@@ -15,7 +15,7 @@
 
     </head>
     <body>
-        <div class="loadIcon"><img src="/img/preloader.gif"></div>
+        <!-- <div class="loadIcon"><img src="/img/preloader.gif"></div> -->
 
         <div class="container">
 
@@ -73,14 +73,7 @@
                 first steps into the digital world of design and development.
             </div>
             <div class="aboutPicture"><img src="/img/mike.jpg" class="myPic"></div>
-            <div class="blog">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
+            <div class="blog"></div>
             <div class="contactForm">
                 <form method="POST">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
@@ -180,9 +173,9 @@
             window.onload = function() {
                 bannerAnimation();
                 setInterval(bannerAnimation, 24500);
-                $(".loadIcon").animate({
-                    opacity: "0"
-                }, 300);
+                // $(".loadIcon").animate({
+                //     opacity: "0"
+                // }, 300);
                 $(".name").css("pointerEvents", "none");
                 $(".container").animate({
                     opacity: "1"
@@ -207,7 +200,7 @@
                     $(".banner").animate({
                         opacity: "0.7"
                     }, 1000);
-                    $(".loadIcon").css("display", "none");
+                    // $(".loadIcon").css("display", "none");
                 }, 1000);
             }
             
