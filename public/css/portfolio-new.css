@@ -260,7 +260,7 @@ body {
 	.container {
 		margin-top: 0px;
 		width: 400px;
-		height: 2600px;
+		height: 2750px;
 	}
 
 	.navBarMobile {
@@ -279,12 +279,13 @@ body {
 		height: 50px;
 		text-align: center;
 		margin-left: -6px;
-		padding-top: 15px;
+		padding-top: 12px;
 		border-left: 2px solid #ddd;
 		border-right: 2px solid #ddd;
 		color: #ddd;
 		display: inline-block;
 		cursor: pointer;
+		font-size: 1.3em;
 	}
 
 	#goAboutM {
@@ -326,6 +327,7 @@ body {
 		left: 0px;
 		opacity: 1;
 		display: block;
+		font-size: 1.2em;
 	}
 
 	.aboutPicture {
@@ -333,7 +335,7 @@ body {
 	}
 
 	.portfolio {
-		top: 820px;
+		top: 900px;
 		display: block;
 		opacity: 1;
 		width: 100%;
@@ -378,8 +380,9 @@ body {
 		opacity: 1;
 		width: 100%;
 		position: absolute;
-		top: 2120px;
+		top: 2210px;
 		left: 0px;
+		font-size: 1.2em;
 	}
 
 	.contactForm {
@@ -387,7 +390,7 @@ body {
 		opacity: 1;
 		width: 100%;
 		position: absolute;
-		top: 2220px;
+		top: 2340px;
 		left: 0px;
 	}
 
@@ -422,7 +425,7 @@ body {
 	#portfolioBanner {
 		display: block;
 		position: absolute;
-		top: 770px;
+		top: 850px;
 		left: 0px;
 		width: 100%;
 		height: 50px;
@@ -438,7 +441,7 @@ body {
 	#contactBanner {
 		display: block;
 		position: absolute;
-		top: 2070px;
+		top: 2150px;
 		left: 0px;
 		width: 100%;
 		height: 50px;
