@@ -31,6 +31,15 @@
             </div>
             <div class="hline"></div>
             <div class="vline"></div>
+            <div class="navBarMobile">
+                <div class="linksM" id="goAboutM">About</div>
+                <div class="linksM" id="goPortfolioM">Portfolio</div>
+                <div class="linksM" id="goContactM">Contact</div>
+            </div>
+            <div class="nameMobile">Michael Truong</div>
+            <div id="aboutBanner">ABOUT ME</div>
+            <div id="portfolioBanner">PORTFOLIO</div>
+            <div id="contactBanner">CONTACT</div>
             <div class="navBar">
                 <div class="links" id="goAbout">About</div>
                 <div class="links" id="goPortfolio">Portfolio</div>
@@ -77,7 +86,6 @@
             <div class="contactForm">
                 <form method="POST">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
-                    <input type="text" id="formnumber" name="number" class="formtext" placeholder=" Your Contact Number">
                     <input type="text" id="formemail" name="email" class="formtext" placeholder=" Your Email*">
                     <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*"></textarea>
                     <button type="submit" id="formsubmit">SEND</button>
@@ -102,6 +110,11 @@
             var contentShowTime = 500;
             var contentDelayTime = 800;
             var initialAnimationTime = 2000;
+            var inHome = true;
+            var inAbout = false;
+            var inPortfolio = false;
+            var inBlog = false;
+            var inContact = false;
 
             function hideAll() {
                 $(".name, #goAbout, #goPortfolio, #goBlog, #goContact").css("pointerEvents", "auto");
@@ -170,6 +183,72 @@
                 }, 24000);
             }
 
+            $(window).on('resize', function(){
+                  if ($(window).width() <= 600) {
+                    $(".aboutPicture").css("display", "none");
+                    $(".banner").css("display", "block");
+                    $(".banner").css("opacity", "0.7");
+                    $(".portfolio").css("display", "block");
+                    $(".portfolio").css("opacity", "1");
+                    $(".about").css("display", "block");
+                    $(".about").css("opacity", "1");
+                    $(".contactContent").css("display", "block");
+                    $(".contactContent").css("opacity", "1");
+                    $(".contactForm").css("display", "block");
+                    $(".contactForm").css("opacity", "1");
+                  }if ($(window).width() >= 601 && inAbout == true) {
+                    $(".aboutPicture").css("display", "block");
+                    $(".portfolio").css("display", "none");
+                    $(".portfolio").css("opacity", "0");
+                    $(".banner").css("display", "none");
+                    $(".banner").css("opacity", "0");
+                    $(".contactContent").css("display", "none");
+                    $(".contactContent").css("opacity", "0");
+                    $(".contactForm").css("display", "none");
+                    $(".contactForm").css("opacity", "0");
+                  }if ($(window).width() >= 601 && inHome == true) {
+                    $(".aboutPicture").css("display", "block");
+                    $(".portfolio").css("display", "none");
+                    $(".portfolio").css("opacity", "0");
+                    $(".about").css("display", "none");
+                    $(".about").css("opacity", "0");
+                    $(".contactContent").css("display", "none");
+                    $(".contactContent").css("opacity", "0");
+                    $(".contactForm").css("display", "none");
+                    $(".contactForm").css("opacity", "0");
+                  }if ($(window).width() >= 601 && inPortfolio == true) {
+                    $(".aboutPicture").css("display", "block");
+                    $(".about").css("display", "none");
+                    $(".about").css("opacity", "0");
+                    $(".banner").css("display", "none");
+                    $(".banner").css("opacity", "0");
+                    $(".contactContent").css("display", "none");
+                    $(".contactContent").css("opacity", "0");
+                    $(".contactForm").css("display", "none");
+                    $(".contactForm").css("opacity", "0");
+                  }if ($(window).width() >= 601 && inContact == true) {
+                    $(".aboutPicture").css("display", "block");
+                    $(".portfolio").css("display", "none");
+                    $(".portfolio").css("opacity", "0");
+                    $(".banner").css("display", "none");
+                    $(".banner").css("opacity", "0");
+                    $(".about").css("display", "none");
+                    $(".about").css("opacity", "0");
+                  }if ($(window).width() >= 601 && inBlog == true) {
+                    $(".aboutPicture").css("display", "block");
+                    $(".portfolio").css("display", "none");
+                    $(".portfolio").css("opacity", "0");
+                    $(".banner").css("display", "none");
+                    $(".banner").css("opacity", "0");
+                    $(".contactContent").css("display", "none");
+                    $(".contactContent").css("opacity", "0");
+                    $(".contactForm").css("display", "none");
+                    $(".contactForm").css("opacity", "0");
+                    $(".about").css("display", "none");
+                    $(".about").css("opacity", "0");
+                  }
+            });
+
             window.onload = function() {
                 bannerAnimation();
                 setInterval(bannerAnimation, 24500);
@@ -206,6 +285,11 @@
             
 
             $(".name").click(function(){
+                inHome = true;
+                inAbout = false;
+                inPortfolio = false;
+                inBlog = false;
+                inContact = false;
                 hideAll();
                 $(".navBar").animate({
                     top: "315px",
@@ -233,6 +317,11 @@
             });
 
             $("#goAbout").click(function(){
+                inHome = false;
+                inAbout = true;
+                inPortfolio = false;
+                inBlog = false;
+                inContact = false;
                 hideAll();
                 $(".navBar").animate({
                     top: "215px",
@@ -263,6 +352,11 @@
             });
 
             $("#goPortfolio").click(function(){
+                inHome = false;
+                inAbout = false;
+                inPortfolio = true;
+                inBlog = false;
+                inContact = false;
                 hideAll();
                 $(".navBar").animate({
                     top: "165px",
@@ -288,6 +382,11 @@
             });
 
             $("#goBlog").click(function(){
+                inHome = false;
+                inAbout = false;
+                inPortfolio = false;
+                inBlog = true;
+                inContact = false;
                 hideAll();
                 $(".navBar").animate({
                     top: "110px",
@@ -315,6 +414,11 @@
             });
 
             $("#goContact").click(function(){
+                inHome = false;
+                inAbout = false;
+                inPortfolio = false;
+                inBlog = false;
+                inContact = true;
                 hideAll();
                 $(".navBar").animate({
                     top: "203px",
@@ -343,6 +447,24 @@
                         opacity: "1"
                     }, contentShowTime);
                 }, contentDelayTime);
+            });
+
+            $("#goAboutM").click(function() {
+                $("body").animate({
+                    scrollTop: $("#aboutBanner").offset().top
+                }, 600);
+            });
+
+            $("#goPortfolioM").click(function() {
+                $("body").animate({
+                    scrollTop: $("#portfolioBanner").offset().top
+                }, 600);
+            });
+
+            $("#goContactM").click(function() {
+                $("body").animate({
+                    scrollTop: $("#contactBanner").offset().top
+                }, 600);
             });
 
         </script>
