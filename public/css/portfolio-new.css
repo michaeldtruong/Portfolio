@@ -15,7 +15,8 @@ body {
 	margin-top: 30px;
 	color: #555;
 	opacity: 0;
-	font-family: 'Taviraj', serif;
+	/*font-family: 'Taviraj', serif;*/
+	font-family: 'Raleway', sans-serif;
 }
 
 .banner {
@@ -25,7 +26,11 @@ body {
 	width: 595px;
 	height: 245px;
 	opacity: 0;
-	background-image: url(/img/outlets.png);
+	background-image: url(/img/dark_geometric.png);
+}
+
+.bannerContainer {
+	width: 100%;
 }
 
 .bannerText {
@@ -129,6 +134,7 @@ body {
 	z-index: 2;
 	opacity: 0.8;
 	padding: 10px;
+	font-family: 'Taviraj', serif;
 }
 
 .portImage {
@@ -152,6 +158,7 @@ body {
 	opacity: 0;
 	padding: 10px;
 	display: none;
+	font-family: 'Taviraj', serif;
 }
 
 .aboutPicture{
@@ -173,6 +180,7 @@ body {
 	padding: 10px;
 	opacity: 0;
 	display: none;
+	font-family: 'Taviraj', serif;
 }
 
 .contactForm {
@@ -184,6 +192,7 @@ body {
 	padding: 10px;
 	opacity: 0;
 	display: none;
+	font-family: 'Taviraj', serif;
 }
 
 .contactContent {
@@ -195,26 +204,35 @@ body {
 	padding: 10px;
 	opacity: 0;
 	display: none;
+	font-family: 'Taviraj', serif;
 }
 
 .myPic {
 	border: 2px solid #000;
 }
 
+.slash {
+	color: #f00;
+}
+
+#bannerTextMobile {
+	display: none;
+}
+
 #formname {
     width: 50%;
     height: 30px;
-    top: 10px;
-    position: absolute;
+    position: relative;
     border: 1px solid #777;
+    margin-bottom: 10px;
 }
 
 #formemail {
     width: 95%;
     height: 30px;
-    position: absolute;
-    top: 50px;
+    position: relative;
     border: 1px solid #777;
+    margin-bottom: 10px;
 }
 
 #formmessage {
@@ -222,13 +240,12 @@ body {
     height: 150px;
     font-size: 1em;
     border: 1px solid #777;
-    position: absolute;
-    top: 90px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 #formsubmit {
-    position: absolute;
-    top: 250px;
+    position: relative;
     width: 120px;
     height: 30px;
     border: 1px solid #777;
@@ -258,9 +275,12 @@ body {
 @media (max-width: 600px) {
 
 	.container {
+		position: relative;
 		margin-top: 0px;
-		width: 400px;
-		height: 2750px;
+		padding: 0px;
+		width: 100%;
+		height: auto;
+		margin-bottom: 40px;
 	}
 
 	.navBarMobile {
@@ -297,10 +317,11 @@ body {
 	}
 
 	.banner {
+		position: relative;
 		display: block;
 		opacity: 1;
 		width: 100%;
-		height: 400px;
+		height: 100vh;
 		left: 0px;
 		top: 0px;
 	}
@@ -322,8 +343,10 @@ body {
 	}
 
 	.about {
+		position: relative;
 		width: 100%;
-		top: 465px;
+		height: auto;
+		top: 0px;
 		left: 0px;
 		opacity: 1;
 		display: block;
@@ -335,11 +358,12 @@ body {
 	}
 
 	.portfolio {
-		top: 900px;
+		position: relative;
+		top: 0px;
 		display: block;
 		opacity: 1;
 		width: 100%;
-		height: 1300px;
+		height: auto;
 		left: 0px;
 		overflow: hidden;
 	}
@@ -352,35 +376,31 @@ body {
 		height: 250px;
 	}
 
-	.bannerLeft {
-		position: absolute;
-		width: 150px;
-		top: 105px;
-		left: 0px;
-		text-align: right;
+	.bannerText {
+		display: none;
 	}
 
 	.bannerSeperater {
-		position: absolute;
-		color: #f00;
-		font-size: 2em;
-		top: 100px;
-		left: 190px;
+		display: none;
 	}
 
-	.bannerRight {
+	#bannerTextMobile {
+		display: block;
 		position: absolute;
-		width: 150px;
-		top: 105px;
-		right: 20px;
+		top: 180px;
+		text-align: center;
+		width: 100%;
+		font-size: 1.4em;
+		color: #ddd;
 	}
 
 	.contactContent {
 		display: block;
 		opacity: 1;
 		width: 100%;
-		position: absolute;
-		top: 2210px;
+		height: auto;
+		position: relative;
+		top: 0px;
 		left: 0px;
 		font-size: 1.2em;
 	}
@@ -389,14 +409,15 @@ body {
 		display: block;
 		opacity: 1;
 		width: 100%;
-		position: absolute;
-		top: 2340px;
+		height: auto;
+		position: relative;
+		top: 0px;
 		left: 0px;
 	}
 
 	.nameMobile {
 		position: absolute;
-		top: 200px;
+		top: 250px;
 		left: 0px;
 		width: 100%;
 		display: block;
@@ -408,8 +429,8 @@ body {
 
 	#aboutBanner {
 		display: block;
-		position: absolute;
-		top: 400px;
+		position: relative;
+		top: 0px;
 		left: 0px;
 		width: 100%;
 		height: 50px;
@@ -424,8 +445,8 @@ body {
 
 	#portfolioBanner {
 		display: block;
-		position: absolute;
-		top: 850px;
+		position: relative;
+		top: 0px;
 		left: 0px;
 		width: 100%;
 		height: 50px;
@@ -440,8 +461,8 @@ body {
 
 	#contactBanner {
 		display: block;
-		position: absolute;
-		top: 2150px;
+		position: relative;
+		top: 0px;
 		left: 0px;
 		width: 100%;
 		height: 50px;

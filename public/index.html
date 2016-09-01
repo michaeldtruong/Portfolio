@@ -11,6 +11,7 @@
         <title>Michael Truong</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
         <link rel="stylesheet" href="/css/portfolio-new.css">
 
     </head>
@@ -20,14 +21,17 @@
         <div class="container">
 
             <div class="banner">
-                <div class="bannerSeperater">|</div>
-                <div class="bannerText bannerRight" id="designer">Designer</div>
-                <div class="bannerText bannerRight" id="developer">Developer</div>
-                <div class="bannerText bannerLeft" id="uiux">UI / UX</div>
-                <div class="bannerText bannerLeft" id="game">Game</div>
-                <div class="bannerText bannerLeft" id="web">Website</div>
-                <div class="bannerText bannerLeft" id="php">PHP</div>
-                <div class="bannerText bannerLeft" id="fullStack">Full Stack</div>
+                <div class="bannerContainer">
+                    <div id="bannerTextMobile">Designer <span class="slash">/</span> Developer</div>
+                    <div class="bannerSeperater">|</div>
+                    <div class="bannerText bannerRight" id="designer">Designer</div>
+                    <div class="bannerText bannerRight" id="developer">Developer</div>
+                    <div class="bannerText bannerLeft" id="uiux">UI / UX</div>
+                    <div class="bannerText bannerLeft" id="game">Game</div>
+                    <div class="bannerText bannerLeft" id="web">Website</div>
+                    <div class="bannerText bannerLeft" id="php">PHP</div>
+                    <div class="bannerText bannerLeft" id="fullStack">Full Stack</div>
+                </div>
             </div>
             <div class="hline"></div>
             <div class="vline"></div>
@@ -37,9 +41,6 @@
                 <div class="linksM" id="goContactM">Contact</div>
             </div>
             <div class="nameMobile">Michael Truong</div>
-            <div id="aboutBanner">ABOUT ME</div>
-            <div id="portfolioBanner">PORTFOLIO</div>
-            <div id="contactBanner">CONTACT</div>
             <div class="navBar">
                 <div class="links" id="goAbout">About</div>
                 <div class="links" id="goPortfolio">Portfolio</div>
@@ -47,6 +48,7 @@
                 <div class="links" id="goContact">Contact</div>
             </div>
             <div class="name"><h1 class="nameHeader">Michael Truong</h1></div>
+            <div id="aboutBanner">ABOUT ME</div>
             <div class="about">
                 Beauty that compliments functionality and functionality that amplifies beauty; 
                 that is the end goal of all my work. As a creative and a developer I am
@@ -60,6 +62,7 @@
                 first steps into the digital world of design and development.
             </div>
             <div class="aboutPicture"><img src="/img/mike.jpg" class="myPic"></div>
+            <div id="portfolioBanner">PORTFOLIO</div>
             <div class="portfolio">
                 <div class="projects" id="project1">
                     <div class="portContent"><h4>Memory Wars</h4>Game Design/Development, Object Oriented Programming, HTML5, CSS3, Javascript, jQuery.</div>
@@ -83,6 +86,11 @@
                 </div>
             </div>
             <div class="blog"></div>
+            <div id="contactBanner">CONTACT</div>
+            <div class="contactContent">
+                Are you interested in working together? Have any questions, comments, or just need a friend to say hi? 
+                You are very welcome to contact me. Then we can create something amazing and later take over the world.
+            </div>
             <div class="contactForm">
                 <form method="POST">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
@@ -90,10 +98,6 @@
                     <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*"></textarea>
                     <button type="submit" id="formsubmit">SEND</button>
                 </form>
-            </div>
-            <div class="contactContent">
-                Are you interested in working together? Have any questions, comments, or just need a friend to say hi? 
-                You are very welcome to contact me. Then we can create something amazing and later take over the world.
             </div>
             <div class="external"></div>
 
@@ -187,7 +191,7 @@
                   if ($(window).width() <= 600) {
                     $(".aboutPicture").css("display", "none");
                     $(".banner").css("display", "block");
-                    $(".banner").css("opacity", "0.7");
+                    $(".banner").css("opacity", "1");
                     $(".portfolio").css("display", "block");
                     $(".portfolio").css("opacity", "1");
                     $(".about").css("display", "block");
@@ -277,7 +281,7 @@
                 }, initialAnimationTime);
                 setTimeout(function() {
                     $(".banner").animate({
-                        opacity: "0.7"
+                        opacity: "1"
                     }, 1000);
                     // $(".loadIcon").css("display", "none");
                 }, 1000);
@@ -311,7 +315,7 @@
                     $(".banner").css("display", "block");
                     $(".name").css("pointerEvents", "none");
                     $(".banner").animate({
-                        opacity: "0.7"
+                        opacity: "1"
                     }, contentShowTime);
                 }, contentDelayTime);
             });
