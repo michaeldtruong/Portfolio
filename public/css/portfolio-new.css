@@ -15,7 +15,6 @@ body {
 	margin-top: 30px;
 	color: #555;
 	opacity: 0;
-	/*font-family: 'Taviraj', serif;*/
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -298,10 +297,10 @@ body {
 		width: 33.7%;
 		height: 50px;
 		text-align: center;
-		margin-left: -6px;
+		margin-left: -5px;
 		padding-top: 12px;
-		border-left: 2px solid #ddd;
-		border-right: 2px solid #ddd;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
 		color: #ddd;
 		display: inline-block;
 		cursor: pointer;

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Memory Wars</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link href="/css/memory-wars.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="cover"></div>
+            <div class="coverText">Coming Soon</div>
+            <div class="titleBoxOne">Memory Wars</div>
+            <div class="titleBoxTwo">
+                <div id="playSequence">Demo</div>
+            </div>
+            <div class="enemySide">
+                <div class="enemySideAlert"></div>
+                <div class="enemyShipImg">
+                    <div class="enemyDmgPop"></div>
+                </div>
+            </div>
+            <div class="enemyHud">
+                <div class="enemyShipName"></div>
+                <div class="maxHpBarEnemy">
+                    <div class="currentHpBarEnemy progress-bar progress-bar-striped active"></div>
+                </div>
+                <div class="maxEnergyBarEnemy">
+                    <div class="currentEnergyBarEnemy progress-bar progress-bar-striped active"></div>
+                </div>
+                <div class="displayTempEnemy"></div>
+                <img src="/img/tempcircle.jpg" class="tempcircleEnemy">
+            </div>
+            <div class="playerSide">
+                <div class="playerSideAlert"></div>
+                <div class="playerShipImg">
+                    <div class="playerDmgPop"></div>
+                </div>
+            </div>
+
+            <div class="hud">
+                <div class="shipMain">
+                    <button class="repeat">&#x276F</button>
+                    <button class ="buttons" id="but1"></button>
+                    <button class ="buttons" id="but2"></button>
+                    <button class ="buttons" id="but3"></button>
+                    <button class ="buttons" id="but4"></button>
+                </div>
+                <div class="weaponDescription"></div>
+                <div class="weaponMenu"></div>
+                <div class="battleLogTitle">Battle Log</div>
+                <div class="battleLog"></div>
+                <div class="playerStatus">
+                    <div class="maxHpBar">
+                        <div class="playerShipName"></div>
+                        <div class="hpDisplay"></div>
+                        <div class="currentHpBar progress-bar progress-bar-striped active"></div>
+                    </div>
+                    <div class="maxEnergyBar">
+                        <div class="energyDisplay"></div>
+                        <div class="currentEnergyBar progress-bar progress-bar-striped active"></div>
+                    </div>
+                    <div class="displayTemp"></div>
+                    <img src="/img/tempcircle.jpg" class="tempcircle">
+                </dv>
+            </div>
+        </div>
+
+        <audio class="audioBattle" preload><source src="audio/battle.ogg" type="audio/ogg"></audio>
+        <audio class="audioConfirm"><source src="audio/confirm.wav" type="audio/wav"></audio>
+        <audio class="audioClick"><source src="audio/click.wav" type="audio/wav"></audio>
+        <audio class="audioCancel"><source src="audio/cancel.wav" type="audio/wav"></audio>
+        <audio class="audioAtk1"><source src="audio/atk1.ogg" type="audio/ogg"></audio>
+        <audio class="audioAtk2"><source src="audio/atk2.ogg" type="audio/ogg"></audio>
+        <audio class="audioAtk3"><source src="audio/atk3.ogg" type="audio/ogg"></audio>
+        <audio class="audioHeal1"><source src="audio/heal1.ogg" type="audio/ogg"></audio>
+        <audio class="audioHeal2"><source src="audio/heal2.ogg" type="audio/ogg"></audio>
+        <audio class="audioBuff1"><source src="audio/buff1.ogg" type="audio/ogg"></audio>
+        <audio class="audioCollapse1"><source src="audio/collapse1.ogg" type="audio/ogg"></audio>
+            
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="/js/memory-wars.js"></script>
+    </body>
+</html>

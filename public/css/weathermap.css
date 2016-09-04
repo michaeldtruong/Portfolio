@@ -1,0 +1,347 @@
+body {
+	background-image: url(/img/grey.png);
+}
+
+.container {
+	position: relative;
+	width: 600px;
+	height: 600px;
+	top: 50px;
+	margin-bottom: 50px;
+	font-family: 'Abel', sans-serif;
+}
+
+#title {
+	position: absolute;
+	top: 0px;
+	left: 190px;
+	font-size: 3em;
+	height: 50px;
+	border-bottom: 1px solid #888;
+}
+
+.map {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 400px;
+	height: 400px;
+	border: 2px solid #888;
+}
+
+.leftside {
+	position: absolute;
+	top: 0px;
+	right: 550px;
+	width: 220px;
+	height: 18%;
+}
+
+.rightside {
+	position: absolute;
+	top: 247px;
+	left: 552px;
+	width: 35%;
+	height: 59.4%;
+	opacity: 0;
+}
+
+.current {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 220px;
+	height: 18%;
+}
+
+.currentline {
+	position: absolute;
+	top: 0px;
+	left: -30px;
+	width: 220px;
+	height: 100%;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	opacity: 0;
+}
+
+.currentspec {
+	position: relative;
+	width: 100%;
+	height: 50%;
+}
+
+.border {
+	width: 100%;
+	height: 30px;
+	border-top: 1px solid #888;
+	border-left: 1px solid #888;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+}
+
+.border2 {
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #888;
+	border-right: 1px solid #888;
+	position: absolute;
+	right: 0px;
+	bottom: 6px;
+}
+
+.line {
+	width: 20px;
+	height: 1px;
+	background-color: #888;
+	position: absolute;
+	top: 69px;
+	left: 50px;
+}
+
+.line2 {
+	width: 20px;
+	height: 1px;
+	background-color: #888;
+	position: absolute;
+	top: 139px;
+	left: 50px;
+}
+.line3 {
+	width: 20px;
+	height: 1px;
+	background-color: #888;
+	position: absolute;
+	top: 209px;
+	left: 50px;
+}
+
+.line4 {
+	width: 20px;
+	height: 1px;
+	background-color: #888;
+	position: absolute;
+	top: 279px;
+	left: 50px;
+}
+
+.name {
+	position: absolute;
+	top: 30px;
+	left: 150px;
+	font-size: 2.5em;
+	width: 400px;
+	height: 50px;
+}
+
+.nameline {
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	width: 500px;
+	height: 50px;
+	border-bottom: 1px solid #888;
+	opacity: 0;
+}
+
+.days {
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	font-size: 1.2em;
+	padding-top: 12px;
+	padding-left: 60px;
+}
+
+.weekday {
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	font-size: 1.6em;
+}
+
+.degree3 {
+	position: relative;
+	bottom: 6px;
+	font-size: 0.7em;
+}
+
+#day1 {
+	position: absolute;
+	top: 0px;
+}
+
+#day2 {
+	position: absolute;
+	top: 70px;
+}
+
+#day3 {
+	position: absolute;
+	top: 140px;
+}
+
+#day4 {
+	position: absolute;
+	top: 210px;
+}
+
+#day5 {
+	position: absolute;
+	top: 280px;
+}
+
+#lat {
+	position: absolute;
+	left: 350px;
+	top: 0px;
+}
+
+#lng {
+	position: absolute;
+	left: 350px;
+	top: 20px;
+}
+
+#temp {
+	font-size: 4.5em;
+	text-align: center;
+}
+
+#degree {
+	font-size: .5em;
+	position: relative;
+	bottom: 27px;
+}
+
+#clow {
+	position: relative;
+	bottom: 200px;
+
+}
+
+#highlow {
+	position: absolute;
+	left: -65px;
+	top: 30px;
+	width: 350px;
+	text-align: center;
+	font-size: 1.5em;
+	padding-top: 3px;
+}
+
+
+.degree2 {
+	position: relative;
+	bottom: 8px;
+	font-size: .6em;
+}
+
+.hl {
+	display: inline-block;
+	margin-right: 60px;
+	margin-left: 60px;
+}
+
+#condition {
+	font-size: 1.7em;
+	text-align: center;
+	padding-top: 10px;
+	position: relative;
+	top: 50px;
+}
+
+#date {
+	position: relative;
+	top: 440px;
+	left: 20px;
+	font-size: 2em;
+    transform: rotate(270deg);
+    transform-origin: left top 0;
+    opacity: 0;
+}
+
+#dateline {
+	position: relative;
+	top: 400px;
+	left: 80px;
+	font-size: 2em;
+    transform: rotate(270deg);
+    transform-origin: left top 0;
+    border-bottom: 1px solid #888;
+    opacity: 0;
+}
+
+@media (max-width: 920px) {
+	.container {
+		width: 400px;
+	}
+
+	.map {
+		position: absolute;
+		top: 100px;
+		left: 0px;
+	}
+
+	#title {
+		position: absolute;
+		left: 90px;
+		width: 210px;
+		text-align: center;
+	}
+
+	.leftside {
+		position: absolute;
+		left: 90px;
+		top: 520px;
+	}
+
+	.rightside {
+		position: absolute;
+		left: 90px;
+		top: 650px;
+		width: 220px;
+		margin-bottom: 40px;
+	}
+
+	.name {
+		position: absolute;
+		left: 0px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.nameline {
+		display: none;
+	}
+
+	#date {
+		display:none;
+	}
+
+	#dateline {
+		display: none;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

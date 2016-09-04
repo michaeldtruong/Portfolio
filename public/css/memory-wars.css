@@ -1,0 +1,610 @@
+body {
+	background-image: url(/img/maze.png);
+}
+
+.container {
+	width: 1024px;
+	height: 700px;
+	position: relative;
+	top: 60px;
+	font-family: 'Orbitron', sans-serif;
+	z-index: 9;
+	overflow: hidden;
+}
+
+.cover {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0;
+	z-index: 10;
+	display: none;
+	text-align: center;
+	padding-top: 30%;
+	font-size: 2em;
+	color: #ddd;
+}
+
+.coverText {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 11;
+	display: none;
+	text-align: center;
+	padding-top: 30%;
+	font-size: 2em;
+	color: #ddd;
+}
+
+.titleBoxOne {
+	position: absolute;
+	top: 90px;
+	left: 300px;
+	width: 300px;
+	height: 200px;
+	padding-top: 180px;
+	padding-left: 130px;
+	border-bottom: 1px solid black;
+
+}
+
+.titleBoxTwo {
+	position: absolute;
+	top: 200px;
+	left: 550px;
+	width: 300px;
+	height: 150px;
+	border-left: 1px solid black;
+	padding-top: 100px;
+	padding-left: 10px;
+}
+
+.enemySide {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 50%;
+	height: 100%;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+	border-left: 2px solid #000;
+	border-right: 2px solid #ddd;
+	background-image: url(/img/dark_mosaic.png);
+	opacity: 0;
+	display: none;
+	-webkit-animation: backgroundScrollTwo 400s linear infinite;
+	animation: backgroundScrollTwo 400s linear infinite;
+}
+
+@-webkit-keyframes backgroundScrollTwo {
+from {background-position: 0 0;}
+to {background-position: 0 -10000px;}
+}
+
+.playerSide {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 50%;
+	height: 100%;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+	border-right: 2px solid #000;
+	border-left: 2px solid #ddd;
+	background-image: url(/img/dark_mosaic.png);
+	opacity: 0;
+	display: none;
+    -webkit-animation: backgroundScroll 400s linear infinite;
+	animation: backgroundScroll 400s linear infinite;
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: 0 10000px;}
+}
+
+.enemyShipImg {
+	position: absolute;
+	width: 390px;
+	height: 450px;
+	top: -40px;
+	left: 115px;
+	transform: rotate(180deg);
+
+}
+
+.enemyShipImg img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enemyDmgPop {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 200px;
+	height: 50px;
+	color: #900;
+	font-family: sans-serif;
+	font-size: 1.7em;
+	text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; 
+	text-align: center;
+	opacity: 0;
+	transform: rotate(180deg);
+}
+
+.enemySideAlert {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	opacity: 0;
+}
+
+.playerShipImg {
+	position: absolute;
+	width: 390px;
+	height: 450px;
+	top: 150px;
+	right: 116px;
+}
+
+.playerShipImg img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.playerDmgPop {
+	position: absolute;
+	top: 120px;
+	left: 100px;
+	width: 200px;
+	height: 50px;
+	color: #900;
+	font-family: sans-serif;
+	font-size: 1.7em;
+	text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; 
+	text-align: center;
+	opacity: 0;
+}
+
+
+.playerSideAlert {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	opacity: 0;
+}
+
+.hud {
+	position: absolute;
+	top: 0px;
+	left: -15px;
+}
+
+.debug {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.shipMain {
+	position: absolute;
+	left: 322px;
+	top: 620px;
+	width: 420px;
+	height: 50px;
+	opacity: 0;
+	display: none;
+}
+
+.buttons {
+	width: 100px;
+	height: 50px;
+	border: 2px solid #ddd;
+	outline: none;
+	border-radius: 5px;
+}
+
+.weaponMenu {
+	position: absolute;
+	top: 360px;
+	left: 355px;
+	width: 345px;
+	height: 200px;
+	background-color: black;
+	border: 1px solid #ddd;
+	opacity: 0;
+	display: none;
+}
+
+.weaponDescription {
+	position: absolute;
+	top: 230px;
+	left: 355px;
+	width: 345px;
+	height: 70px;
+	border: 1px solid #ddd;
+	background-color: black;
+	padding-left: 10px;
+	padding-top: 3px;
+	font-family: sans-serif;
+	color: #ddd;
+	opacity: 0;
+	display: none;
+}
+
+.weapons {
+	width: 150px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+.weapons:hover {
+	opacity: 0.7;
+}
+
+.battleLog {
+	position: absolute;
+	left: 0px;
+	top: 540px;
+	width: 260px;
+	height: 140px;
+	font-size: 1em;
+	overflow: auto;
+	border: 1px solid gray;
+	color: white;
+	font-family: sans-serif;
+	padding: 10px;
+	background-image: url(/img/px.png);
+	opacity: 0;
+	display: none;
+}
+
+.battleLogTitle {
+	position: absolute;
+	top: 518px;
+	left: 70px;
+	width: 200px;
+	font-size: 1.2em;
+	color: #ddd;
+	opacity: 0;
+	display: none;
+}
+
+.repeat {
+	position: absolute;
+	top: 10px;
+	left: 435px;
+	width: 40px;
+	height: 30px;
+	font-size: 1.4em;
+	background-color: #999;
+	border-radius: 5px;
+	border: 2px solid #ddd;
+	opacity: 1;
+	outline: none;
+}
+
+.enemyHud {
+	position: absolute;
+	left: -30px;
+	opacity: 0;
+	display: none;
+}
+
+.enemyShipName {
+	position: absolute;
+	top: 178px;
+	left: -32px;
+	width: 150px;
+	height: 40px;
+	color: #ddd;
+	font-size: 1.4em;
+	text-align: right;
+	transform: rotate(270deg);
+}
+
+.maxHpBarEnemy {
+	position: absolute;
+	left: 50px;
+	top: 118px;
+	width: 10px;
+	height: 200px;
+	border-radius: 20px;
+	background-color: gray;
+	border: 1px solid white;
+	transform: rotate(180deg);
+
+}
+
+.currentHpBarEnemy {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #ff5500;
+	border-radius: 20px;
+	transform: rotate(180deg);
+
+}
+
+.maxEnergyBarEnemy {
+	position: absolute;
+	left: 63px;
+	top: 118px;
+	width: 10px;
+	height: 125px;
+	border-radius: 20px;
+	background-color: gray;
+	border: 1px solid white;
+	transform: rotate(180deg);
+}
+
+.currentEnergyBarEnemy {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #33ccff;
+	border-radius: 20px;
+	transform: rotate(180deg);
+
+}
+
+.displayTempEnemy {
+	position: absolute;
+	top: 38px;
+	left: 38px;
+	color: #ddd;
+	font-size: 2.5em;
+	width: 45px;
+	height: 45px;
+	text-align: center;
+}
+
+.tempcircleEnemy {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 10px;
+	left: 10px;
+	-webkit-animation:spin 60s linear infinite;
+    -moz-animation:spin 60s linear infinite;
+    animation:spin 60s linear infinite;
+}
+
+.playerStatus {
+	position: absolute;
+	top: 0px;
+	left: 30px;
+	opacity: 0;
+	display: none
+}
+
+.playerShipName {
+	position: absolute;
+	top: 270px;
+	left: -70px;
+	width: 200px;
+	height: 40px;
+	color: #ddd;
+	font-size: 2em;
+	text-align: right;
+	transform: rotate(90deg);
+}
+
+.maxHpBar {
+	position: absolute;
+	left: 950px;
+	top: 110px;
+	width: 15px;
+	height: 400px;
+	border-radius: 20px;
+	background-color: gray;
+	border: 2px solid white;
+}
+
+.currentHpBar {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #ff5500;
+	border-radius: 20px;
+	z-index: 1;
+
+}
+
+.hpDisplay {
+	position: absolute;
+	top: 200px;
+	left: -32px;
+	width: 70px;
+	height: 20px;
+	transform: rotate(90deg);
+	z-index: 2;
+	font-size: 1em;
+	color: #ddd;
+	font-weight: bold;
+
+}
+
+.maxEnergyBar {
+	position: absolute;
+	left: 930px;
+	top: 235px;
+	width: 15px;
+	height: 275px;
+	border-radius: 20px;
+	background-color: gray;
+	border: 2px solid white;
+}
+
+.currentEnergyBar {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #33ccff;
+	border-radius: 20px;
+
+}
+
+.energyDisplay {
+	position: absolute;
+	top: 140px;
+	left: -32px;
+	width: 70px;
+	height: 20px;
+	transform: rotate(90deg);
+	z-index: 2;
+	font-size: 1em;
+	color: #ddd;
+	font-weight: bold;
+
+}
+
+.tempcircle {
+	position: absolute;
+	width: 170px;
+	height: 170px;
+	top: 520px;
+	left: 850px;
+	-webkit-animation:spin 60s linear infinite;
+    -moz-animation:spin 60s linear infinite;
+    animation:spin 60s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.displayTemp {
+	position: absolute;
+	top: 572px;
+	left: 906px;
+	color: #ddd;
+	font-size: 3.5em;
+	width: 65px;
+	height: 65px;
+	text-align: center;
+}
+
+.allBoosters {
+	animation-name: example;
+	animation-duration: 0.1s;
+	-webkit-animation-iteration-count: infinite;
+}
+	@keyframes example {
+    0% {opacity: 1;}
+    25% {opacity: 0.5;}
+    50% {opacity: 1;}
+	75% {opacity: 0.5;}
+}	100% {opacity: 1;}
+
+#regaliaBooster0 {
+	position: absolute;
+	width: 20px;
+	top: 330px;
+	left: 200px;
+}
+
+#regaliaBooster1 {
+	position: absolute;
+	width: 20px;
+	top: 328px;
+	left: 134px;
+}
+
+#regaliaBooster2 {
+	position: absolute;
+	width: 20px;
+	top: 330px;
+	left: 171px;
+}
+
+#regaliaBooster3 {
+	position: absolute;
+	width: 20px;
+	top: 328px;
+	left: 238px;
+}
+
+#regaliaBooster4 {
+	position: absolute;
+	width: 20px;
+	top: 310px;
+	left: 115px;
+}
+
+#regaliaBooster5 {
+	position: absolute;
+	width: 20px;
+	top: 310px;
+	left: 258px;
+}
+
+#exodusBooster0 {
+	position: absolute;
+	top: 375px;
+	left: 71px;
+	z-index: 2;
+}
+
+#exodusBooster1 {
+	position: absolute;
+	top: 372px;
+	left: 87px;
+	z-index: 1;
+}
+
+#exodusBooster2 {
+	position: absolute;
+	top: 375px;
+	left: 102px;
+	z-index: 2;
+}
+
+#exodusBooster3 {
+	position: absolute;
+	top: 375px;
+	left: 287px;
+	z-index: 2;
+}
+
+#exodusBooster4 {
+	position: absolute;
+	top: 372px;
+	left: 271px;
+	z-index: 1;
+}
+
+#exodusBooster5 {
+	position: absolute;
+	top: 375px;
+	left: 255px;
+	z-index: 2;
+}
+
+#playSequence {
+	border: 0px;
+	width: 40px;
+	background-color: none;
+	cursor: pointer;
+}
+
+#playSequence:hover {
+	color: #888;
+}

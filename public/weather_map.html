@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Weather Map</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/weathermap.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="container">
+			<div id="title">Weather Map</div>
+			<div class="name"></div>
+			<div class="nameline"></div>
+			<div id="date"></div>
+			<div id="dateline"></div>
+			<div class="leftside">
+				<div class="currentline"></div>
+				<div class="current">
+					<div id="temp" class="currentspec"></div>
+					<div id="condition" class="currentspec"></div>
+				</div>
+				<div id="highlow"></div>
+			</div>
+			<div class="rightside">
+					<div class="border"></div>
+					<div class="border2"></div>
+					<div class="line"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
+					<div class="line4"></div>
+					<div class="days" id="day1"></div>
+					<div class="days" id="day2"></div>
+					<div class="days" id="day3"></div>
+					<div class="days" id="day4"></div>
+					<div class="days" id="day5"></div>
+			</div>
+			<div class="map" id="map-canvas"></div>
+			<div id="lat"></div>
+			<div id="lng"></div>
+		</div>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyGgaUONQsBfc8b_VxvWLC424mTyhhhAc"></script>
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script>
+
+			"use strict";
+
+			var map;
+			var geocoder;
+			var marker;
+			var pos;
+
+			google.maps.event.addDomListener(window, 'load', mapInit);
+
+			function mapInit() {
+				var latlng = new google.maps.LatLng(35.02385, -82.74883);
+				var mapOptions = {
+					zoom: 4,
+					center: latlng,
+					disableDefaultUI: true,
+					styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]
+				};
+				
+				function placeMarker(location) {
+				  	if (marker) {
+				    	marker.setPosition(location);
+				  	} else {
+				    	marker = new google.maps.Marker({
+				      	position: location,
+				      	map: map,
+				      	animation: google.maps.Animation.DROP
+				    	});
+				  	}
+				}
+
+				map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+				map.addListener('click', function(event) {
+					$("#date").html(new Date().toDateString());
+					$("#title").animate({
+						opacity: 0,
+						top: -40 + "px"
+					},1000);
+					placeMarker(event.latLng);
+					map.panTo(event.latLng);
+					pos = marker.getPosition();
+					$.ajax("http://api.openweathermap.org/data/2.5/weather", {
+						data: {
+		    				APPID: "826149eab92aeae55f2532472c3e2ea5",
+		    				lat: pos.lat,
+		    				lon: pos.lng,
+		    				units: "imperial"
+		    			}
+
+					}).done(function(dataOne) {
+						$(".name, #temp, #condition").animate({
+							opacity: 0
+						},0);
+						$(".name").html(dataOne.name);
+						$("#temp").html(parseInt(dataOne.main.temp) + "<span id='degree'>&#9675</span>");
+						$("#condition").html(dataOne.weather[0].description);
+						$(".name, #temp, #condition, #date, .rightside").animate({
+							opacity: 1
+						},1000);
+						$(".nameline").animate({
+							opacity: 1,
+							top: 32 + "px"
+						});
+						$(".currentline").animate({
+							opacity: 1,
+							left: 0 + "px"
+						});
+						$("#dateline").animate({
+							opacity: 1,
+							left: 65 + "px"
+						});
+					});
+
+					$.ajax("http://api.openweathermap.org/data/2.5/forecast/daily", {
+						data: {
+		    				APPID: "826149eab92aeae55f2532472c3e2ea5",
+		    				lat: pos.lat,
+		    				lon: pos.lng,
+		    				units: "imperial"
+		    			}
+					}).done(function(dataTwo) {
+						var date;
+						$(".days, #highlow").animate({
+							opacity: 0
+						},0);
+						$("#highlow").html("<div class='hl'>" + parseInt(dataTwo.list[0].temp.min) + "<span class='degree2'>&#9675</span></div><div class='hl'>" + parseInt(dataTwo.list[0].temp.max) + "<span class='degree2'>&#9675</span></div>")
+						for (var i = 1; i < 6; i++) {
+							date = new Date(dataTwo.list[i].dt * 1000)
+							$("#day" + i).html("<div class='weekday'>" + date.toDateString().substring(0,3) + "</div>" + parseInt(dataTwo.list[i].temp.max) + "<span class='degree3'>&#9675</span>" + " / " + parseInt(dataTwo.list[i].temp.min) + "<span class='degree3'>&#9675</span>" + "<br>" + dataTwo.list[i].weather[0].description);
+						}
+						$("#highlow, .days").animate({
+							opacity: 1
+						},1000);
+					});
+				});
+			}
+
+		</script>
+
+	</body>
+</html>

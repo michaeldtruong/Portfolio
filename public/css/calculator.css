@@ -1,0 +1,215 @@
+body {
+	background-image: url(/img/diagnalstripe.png);
+}
+
+.container {
+	position: relative;
+	height: 450px;
+	width: 400px;
+	top: 50px;
+}
+
+.cover {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #111;
+	opacity: 0.9;
+	z-index: 14;
+}
+
+.calculator {
+	position: absolute;
+	left: 110px;
+	top: 150px;
+	width: 240px;
+	height: 250px;
+	box-shadow: 10px 10px 30px #333;
+	opacity: 0;
+	z-index: 11;
+}
+
+.turnon {
+	position: absolute;
+	left: 20px;
+	top: 182px;
+	width: 90px;
+	height: 90px;
+	z-index: 16;
+	opacity: 0;
+}
+
+.turnoff {
+	position: absolute;
+	left: 20px;
+	top: 182px;
+	width: 90px;
+	height: 90px;
+	z-index: 16;
+	opacity: 0;
+	display: none;
+}
+.magiccircleoff {
+	position: absolute;
+	left: 20px;
+	top: 182px;
+	width: 90px;
+	height: 90px;
+	z-index: 15;
+	animation-name: example;
+	animation-duration: 4s;
+	-webkit-animation-iteration-count: infinite;
+}
+	@keyframes example {
+    0% {opacity: 1;}
+    25% {opacity: 0;}
+    65% {opacity: 0;}
+}	100% {opacity: 1;}
+
+
+.magiccircle {
+	position: absolute;
+	left: 20px;
+	top: 182px;
+	width: 90px;
+	height: 90px;
+	opacity: 0;
+	z-index: 5;
+	-webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;
+    animation:spin 6s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.window {
+	position: absolute;
+	top: 80px;
+	left: 50px;
+	opacity: 0;
+	z-index: 5;
+
+}
+
+.window1 {
+	position: absolute;
+	left: 50px;
+	opacity: 0;
+	z-index: 5;
+}
+
+.machine {
+	position: absolute;
+	top: 120px;
+	left: 10px;
+	z-index: 10;
+}
+
+.machine2 {
+	position: absolute;
+	top: 413px;
+	left: 130px;
+	z-index: 10;
+}
+
+.btnnumber:hover {
+	opacity: 0.8;
+}
+
+.btnnumber {
+	border: 1px solid black;
+	width: 22.2%;
+	height: 50px;
+	position: relative;
+	left: 20px;
+	top: 0px;
+	outline: none;
+	font-size: 1.5em;
+	margin-left: -4px;
+	margin-right: 0px;
+	background-image: url(/img/outlets.png);
+	color: #aaa;
+	-webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+
+.btnnumber:after {
+    content: "";
+    background: #009999;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.btnnumber:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.op {
+	background-image:  url(/img/outlets2.png);
+}
+.btnzero {
+	width: 44.3%;
+}
+
+#output1 {
+	position: absolute;
+	width: 90px;
+	top: 92px;
+	left: 65px;
+	text-align: center;
+	color: #ccc;
+	overflow: hidden;
+	padding-right: 5px;
+	padding-left: 5px;
+	z-index: 6;
+}
+
+#output2 {
+	position: absolute;
+	width: 30px;
+	top: 92px;
+	left: 176px;
+	text-align: center;
+	color: #ccc;
+	z-index: 6;
+}
+
+#output3 {
+	position: absolute;
+	width: 90px;
+	top: 92px;
+	left: 225px;
+	text-align: center;
+	color: #ccc;
+	overflow: hidden;
+	padding-right: 5px;
+	padding-left: 5px;
+	z-index: 6;
+}
+
+#outputresult {
+	position: absolute;
+	width: 240px;
+	top: 22px;
+	left: 80px;
+	font-size: 2.2em;
+	text-align: center;
+	color: #ccc;
+	overflow: hidden;
+	padding-right: 5px;
+	padding-left: 5px;
+	z-index: 6;
+}
+

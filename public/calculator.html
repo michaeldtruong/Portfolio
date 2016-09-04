@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Calculator</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/calculator.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="cover" id="cover"></div>
+        <div class="container">
+
+            <button class="turnon" id="btnon" onclick="turnOn()">On</button>
+            <button class="turnoff" id="btnoff" onclick="turnOff()">Off</button>
+            <img src="/img/magic_circle.png" class="magiccircle" id="magic">
+            <img src="/img/magic_circleoff.png" class="magiccircleoff" id="magicoff">
+            <img src="/img/calcoutput.png" class="window1" id="calcoutput">
+            <img src="/img/calcinput.png" class="window" id="calcinput">
+            <img src="/img/calcmachine2.png" class="machine2" id="machine">
+            <img src="/img/calcmachine.png" class="machine">
+
+            <div id="output1" maxlength="10"></div>
+            <div id="output2"></div>
+            <div id="output3"></div>
+            <div id="outputresult"></div>
+
+            <div class="calculator" id="calc">
+
+                <div class="row">
+                    <button class="btnnumber" onclick="mod('ac')">AC</button>
+                    <button class="btnnumber" onclick="mod('neg')">+/-</button>
+                    <button class="btnnumber" onclick="mod('percent')">%</button>
+                    <button class="btnnumber op" onclick="oper('/')">/</button>
+                </div>
+
+                <div class="row">
+                    <button class="btnnumber" onclick="number(7)">7</button>
+                    <button class="btnnumber" onclick="number(8)">8</button>
+                    <button class="btnnumber" onclick="number(9)">9</button>
+                    <button class="btnnumber op" onclick="oper('x')">x</button>
+                </div>
+
+                <div class="row">
+                    <button class="btnnumber" onclick="number(4)">4</button>
+                    <button class="btnnumber" onclick="number(5)">5</button>
+                    <button class="btnnumber" onclick="number(6)">6</button>
+                    <button class="btnnumber op" onclick="oper('-')">-</button>
+                </div>
+
+                <div class="row">
+                    <button class="btnnumber" onclick="number(1)">1</button>
+                    <button class="btnnumber" onclick="number(2)">2</button>
+                    <button class="btnnumber" onclick="number(3)">3</button>
+                    <button class="btnnumber op" onclick="oper('+')">+</button>
+                </div>
+
+                <div class="row">
+                    <button class="btnnumber btnzero" onclick="number(0)">0</button>
+                    <button class="btnnumber" onclick="mod('.')">.</button>
+                    <button class="btnnumber op" onclick="doMath()">=</button>
+                </div>
+
+            </div>
+
+        </div>
+        <script>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// The Functional Part //////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            "use strict";
+
+            var outputOne = document.getElementById("output1");
+            var outputTwo = document.getElementById("output2");
+            var outputThree = document.getElementById("output3");
+            var outputResult = document.getElementById("outputresult");
+            var havePercentageOne = false;
+            var havePercentageTwo = false;
+
+            function oper(op) {
+                if (outputResult.innerHTML == "Not a Number" || outputOne.innerHTML == "") {
+                    console.log("User is trying something silly");
+                } else if (outputTwo.innerHTML !== "" && outputResult.innerHTML !== "") {
+                    outputOne.innerHTML = outputResult.innerHTML;
+                    outputResult.innerHTML = "";
+                    outputThree.innerHTML = "";
+                    outputTwo.innerHTML = op; 
+                } else {
+                    outputTwo.innerHTML = op;
+                }
+            }   
+
+            function number(num) {
+                if (outputResult.innerHTML !== "") {
+                    outputResult.innerHTML = "";
+                    outputOne.innerHTML = "";
+                    outputTwo.innerHTML = "";
+                    outputThree.innerHTML = "";
+                    outputOne.innerHTML = outputOne.innerHTML + num;
+                } else if (outputOne.innerHTML !== "" && outputTwo.innerHTML !== "" && outputThree.innerHTML.length < 9) {
+                    outputThree.innerHTML = outputThree.innerHTML + num;
+                } else if (outputOne.innerHTML.length < 9 && outputThree.innerHTML == "") {
+                    outputOne.innerHTML = outputOne.innerHTML + num;
+                }
+            }
+
+            function mod(input) {
+                var numOne = parseFloat(outputOne.innerHTML);
+                var numTwo = parseFloat(outputThree.innerHTML);
+
+                if (input == "ac") {
+                    havePercentageOne = false;
+                    havePercentageTwo = false;
+                    outputOne.innerHTML = "";
+                    outputTwo.innerHTML = "";
+                    outputThree.innerHTML = "";
+                    outputResult.innerHTML = "";
+                } else if (input == "percent" && outputResult.innerHTML !== "") {
+                    console.log("User is trying something silly");
+                } else if (input == "neg" && outputResult.innerHTML !== "") {
+                    console.log("User is trying something silly");
+                } else if (input == "." && outputResult.innerHTML !== "") {
+                    console.log("User is trying something silly");
+                } else if (input == "percent" && outputOne.innerHTML !== "" && outputTwo.innerHTML !== "" && outputThree.innerHTML !== "" && havePercentageTwo == false) {
+                    outputThree.innerHTML = numTwo / 100;
+                    havePercentageTwo = true;
+                } else if (input == "percent" && outputOne.innerHTML !== "" && outputTwo.innerHTML == "" && havePercentageOne == false) {
+                    outputOne.innerHTML = numOne / 100;
+                    havePercentageOne = true;
+                } else if (input == "neg" && outputOne.innerHTML !== "" && outputTwo.innerHTML !== "" && outputThree.innerHTML !== "" && outputThree.innerHTML.indexOf("-") !== -1) {
+                    outputThree.innerHTML = outputThree.innerHTML.replace("-","");
+                } else if (input == "neg" && outputOne.innerHTML !== "" && outputTwo.innerHTML !== "" && outputThree.innerHTML !== "") {
+                    outputThree.innerHTML = "-" + numTwo;
+                } else if (input == "neg" && outputOne.innerHTML !== "" && outputTwo.innerHTML == "" && outputOne.innerHTML.indexOf("-") !== -1) {
+                    outputOne.innerHTML = outputOne.innerHTML.replace("-","");
+                } else if (input == "neg" && outputOne.innerHTML !== "" && outputTwo.innerHTML == "") {
+                    outputOne.innerHTML = "-" + numOne;
+                } else if (input == "." && outputThree.innerHTML !== "" && outputTwo.innerHTML !== "" && outputThree.innerHTML.indexOf(".") == -1) {
+                    outputThree.innerHTML = outputThree.innerHTML + ".";
+                } else if (input == "." && outputOne.innerHTML !== "" && outputTwo.innerHTML == "" && outputOne.innerHTML.indexOf(".") == -1) {
+                    outputOne.innerHTML = outputOne.innerHTML + ".";
+                }
+            }
+
+            function doMath() {
+                var numOne = parseFloat(outputOne.innerHTML);
+                var numTwo = parseFloat(outputThree.innerHTML);
+                var result = "";
+
+                function par() {
+                    outputThree.innerHTML = outputOne.innerHTML;
+                    numOne = parseFloat(outputOne.innerHTML);
+                    numTwo = parseFloat(outputThree.innerHTML);
+                }
+                function parTwo() {
+                    outputOne.innerHTML = outputResult.innerHTML;
+                    numOne = parseFloat(outputOne.innerHTML);
+                    numTwo = parseFloat(outputThree.innerHTML);
+                }
+                function checkLength() {
+                    if (result.length > 12) {
+                        result = result.substring(0,11)
+                        outputResult.innerHTML = result + "_";
+                        havePercentageOne = false;
+                        havePercentageTwo = false;
+                    } else {
+                        outputResult.innerHTML = result;
+                        havePercentageOne = false;
+                        havePercentageTwo = false;
+                    }
+                }
+
+                if (outputTwo.innerHTML == "+" && outputOne.innerHTML !== "" && outputThree.innerHTML !== "" && outputResult.innerHTML == "") {
+                    result = result + (numOne + numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "-" && outputOne.innerHTML !== "" && outputThree.innerHTML !== "" && outputResult.innerHTML == "") {
+                    result = result + (numOne - numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "x" && outputOne.innerHTML !== "" && outputThree.innerHTML !== "" && outputResult.innerHTML == "") {
+                    result = result + (numOne * numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "/" && (numTwo == "0" || outputThree.innerHTML == "." ) && outputOne.innerHTML !== "" && outputThree.innerHTML !== "") {
+                    outputResult.innerHTML = "Not a Number";
+                } else if (outputTwo.innerHTML == "/" && outputOne.innerHTML !== "" && outputThree.innerHTML !== "" && outputResult.innerHTML == "") {
+                    result = result + (numOne / numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "+" && outputThree.innerHTML == "") {
+                    par();
+                    result = result + (numOne + numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "-" && outputThree.innerHTML == "") {
+                    par();
+                    result = result + (numOne - numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "x" && outputThree.innerHTML == "") {
+                    par();
+                    result = result + (numOne * numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "/" && outputThree.innerHTML == "") {
+                    par();
+                    result = result + (numOne / numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "+" && outputResult.innerHTML !== "") {
+                    parTwo();
+                    result = result + (numOne + numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "-" && outputResult.innerHTML !== "") {
+                    parTwo();
+                    result = result + (numOne - numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "x" && outputResult.innerHTML !== "") {
+                    parTwo();
+                    result = result + (numOne * numTwo);
+                    checkLength();
+                } else if (outputTwo.innerHTML == "/" && outputResult.innerHTML !== "") {
+                    parTwo();
+                    result = result + (numOne / numTwo);
+                    checkLength();
+                } 
+            }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// The Pretty Part //////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            var calc = document.getElementById("calc");
+            var input = document.getElementById("calcinput");
+            var output = document.getElementById("calcoutput");
+            var magic = document.getElementById("magic");
+            var machine = document.getElementById("machine");
+            var magicOff = document.getElementById("magicoff");
+            var cover = document.getElementById("cover");
+
+            function turnOn() {
+                var fade = 0;
+                var fadeTwo = 0;
+                var fadeThree = 0;
+                var fadeFour = 1;
+                var fadeFive = 0.9;
+                var move = 110;
+                var moveTwo = 130;
+
+                var id = setInterval(frame, 8); 
+                var idTwo = setInterval(frameTwo, 15);
+                var idThree = setInterval(frameThree, 4);
+                var idFour = setInterval(frameFour, 3)
+
+                function frame() {
+                    if (move == 140) {
+                        clearInterval(id);
+                    } else {
+                        fade = fade + 0.01;
+                        move = move + 0.25;
+                        calc.style.opacity = fade;
+                        calc.style.left = move + "px";
+                    } 
+                }
+                function frameTwo() {
+                    if (fadeTwo > 1) {
+                        clearInterval(idTwo);
+                    } else {
+                        fadeTwo = fadeTwo + 0.01;
+                        input.style.opacity = fadeTwo;
+                        output.style.opacity = fadeTwo;
+                    }
+                }
+                function frameThree() {
+                    if (fadeThree > 1) {
+                        clearInterval(idThree);
+                        magicoff.style.display = "none";
+                        cover.style.display = "none";
+                    } else {
+                        fadeThree = fadeThree + 0.01;
+                        fadeFour = fadeFour - 0.01
+                        fadeFive = fadeFive - 0.01
+                        magic.style.opacity = fadeThree;
+                        magicoff.style.opacity = fadeFour;
+                        cover.style.opacity = fadeFive;
+                    }
+                }
+                function frameFour() {
+                    if (moveTwo == 160) {
+                        clearInterval(idFour);
+                    } else {
+                        moveTwo = moveTwo + 0.25;
+                        machine.style.left = moveTwo + "px";
+                    }
+                }
+
+                document.getElementById("btnon").style.display = "none";
+                function btnWaitTwo() {
+                document.getElementById("btnoff").style.display = "block";
+                }
+                setTimeout(btnWaitTwo, 1500);
+            }
+
+            function turnOff() {
+                var fade = 1;
+                var fadeTwo = 1;
+                var fadeThree = 1;
+                var fadeFour = 0;
+                var fadeFive = 0;
+                var move = 140;
+                var moveTwo = 160;
+
+                var id = setInterval(frame, 5); 
+                var idTwo = setInterval(frameTwo, 2);
+                var idThree = setInterval(frameThree, 2);
+                var idFour = setInterval(frameFour, 3);
+                var idFive = setInterval(frameFive, 10);
+
+                havePercentageOne = false;
+                havePercentageTwo = false;
+                outputOne.innerHTML = ""
+                outputTwo.innerHTML = ""
+                outputThree.innerHTML = ""
+                outputResult.innerHTML = ""
+
+                function frame() {
+                    if (move == 110) {
+                        clearInterval(id);
+                    } else {
+                        fade = fade - 0.01;
+                        move = move - 0.25;
+                        calc.style.opacity = fade;
+                        calc.style.left = move + "px";
+                    } 
+                }
+                function frameTwo() {
+                    if (fadeTwo < 0) {
+                        clearInterval(idTwo);
+                    } else {
+                        fadeTwo = fadeTwo - 0.01;
+                        input.style.opacity = fadeTwo;
+                        output.style.opacity = fadeTwo;
+                    }
+                }
+                function frameThree() {
+                    if (fadeThree < 0) {
+                        magicoff.style.display = "block";
+                        clearInterval(idThree);
+                    } else {
+                        fadeThree = fadeThree - 0.01;
+                        fadeFour = fadeFour + 0.01;
+                        fadeFive = fadeFive + 0.01;
+                        magic.style.opacity = fadeThree;
+                        magicoff.style.opacity = fadeFour;
+                    }
+                }
+                function frameFour() {
+                    if (moveTwo == 130) {
+                        clearInterval(idFour);
+                    } else {
+                        moveTwo = moveTwo - 0.25;
+                        machine.style.left = moveTwo + "px";
+                    }
+                }
+                function frameFive() {
+                    cover.style.opacity = 0;
+                    cover.style.display = "block";
+                    if (fadeFive > 0.9) {
+                        cover.style.opacity = 0.9;
+                        clearInterval(idFive);
+                    } else {
+                        fadeFive = fadeFive + 0.01;
+                        cover.style.opacity = fadeFive;
+                    }
+                }
+                document.getElementById("btnoff").style.display = "none";
+                function btnWaitOne() {
+                document.getElementById("btnon").style.display = "block";
+                }
+                setTimeout(btnWaitOne, 1000);
+            }
+
+        </script>
+
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    </body>
+</html>
