@@ -107,19 +107,23 @@ body {
 
 .portfolio {
 	position: absolute;
-	top: 153px;
-	left: 98px;
+	top: 110px;
+	left: 90px;
 	width: 500px;
-	height: 300px;
+	height: 400px;
 	overflow: auto;
 	z-index: 1;
 	opacity: 0;
 	display: none;
 }
 
+.portfolio::-webkit-scrollbar { 
+    display: none; 
+}
+
 .projects {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 	position: relative;
 }
 
@@ -170,16 +174,43 @@ body {
 	display: none;
 }
 
+.externalImage {
+	width: 30px;
+}
+
+#git {
+	position: absolute;
+	left: -45px;
+	top: 60px;
+}
+
+#linkedin {
+	position: absolute;
+	left: -45px;
+	top: 110px;
+}
+
+#dribble {
+	position: absolute;
+	left: -45px;
+	top: 160px;
+}
+
 .blog {
 	position: absolute;
-	top: 100px;
-	left: 203px;
-	width: 500px;
-	height: 450px;
+	top: 140px;
+	left: 210px;
+	width: 520px;
+	height: 400px;
 	padding: 10px;
+	overflow: auto;
 	opacity: 0;
 	display: none;
 	font-family: 'Taviraj', serif;
+}
+
+.blog::-webkit-scrollbar { 
+    display: none; 
 }
 
 .contactForm {
@@ -219,35 +250,67 @@ body {
 }
 
 #formname {
-    width: 50%;
+	display: block;
+    width: 40%;
     height: 30px;
     position: relative;
-    border: 1px solid #777;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    background-color: transparent;
+    -webkit-transition: width 0.8s ease-in-out;
+    transition: width 0.8s ease-in-out;
+}
+
+#formname:focus {
+	width: 95%;
 }
 
 #formemail {
-    width: 95%;
+	display: block;
+    width: 40%;
     height: 30px;
     position: relative;
-    border: 1px solid #777;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    background-color: transparent;
+    -webkit-transition: width 0.8s ease-in-out;
+    transition: width 0.8s ease-in-out;
+}
+
+#formemail:focus {
+	width: 95%;
 }
 
 #formmessage {
+	display: block;
     width: 95%;
-    height: 150px;
+    height: 50px;
     font-size: 1em;
-    border: 1px solid #777;
     margin-bottom: 10px;
     position: relative;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    background-color: transparent;
 }
 
 #formsubmit {
     position: relative;
-    width: 120px;
+    left: -25px;
+    width: 100px;
     height: 30px;
-    border: 1px solid #777;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #aaa;
+}
+
+#formsubmit:hover {
+	color: #555;
 }
 
 .navBarMobile {
@@ -354,6 +417,36 @@ body {
 
 	.aboutPicture {
 		display: none;
+	}
+
+	.externalLinks {
+		position: relative;
+		width: 100%;
+		text-align: center;
+	}
+
+	#git {
+		position: relative;
+		display: inline-block;
+		margin: 15px;
+		left: 0px;
+		top: 0px;
+	}
+
+	#linkedin {
+		position: relative;
+		display: inline-block;
+		margin: 15px;
+		left: 0px;
+		top: 0px;
+	}
+
+	#dribble {
+		position: relative;
+		display: inline-block;
+		margin: 15px;
+		left: 0px;
+		top: 0px;
 	}
 
 	.portfolio {
