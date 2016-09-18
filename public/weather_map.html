@@ -99,10 +99,11 @@
 		    			}
 
 					}).done(function(dataOne) {
+						console.log(dataOne);
 						$(".name, #temp, #condition").animate({
 							opacity: 0
 						},0);
-						$(".name").html(dataOne.name);
+						$(".name").html(dataOne.name + ", " + dataOne.sys.country);
 						$("#temp").html(parseInt(dataOne.main.temp) + "<span id='degree'>&#9675</span>");
 						$("#condition").html(dataOne.weather[0].description);
 						$(".name, #temp, #condition, #date, .rightside").animate({
