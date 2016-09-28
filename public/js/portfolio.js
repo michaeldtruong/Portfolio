@@ -158,9 +158,6 @@ $(window).on('resize', function(){
 window.onload = function() {
     bannerAnimation();
     setInterval(bannerAnimation, 12500);
-    // $(".loadIcon").animate({
-    //     opacity: "0"
-    // }, 300);
     $(".name").css("pointerEvents", "none");
     $(".container").animate({
         opacity: "1"
@@ -185,7 +182,6 @@ window.onload = function() {
         $(".banner").animate({
             opacity: "1"
         }, 1000);
-        // $(".loadIcon").css("display", "none");
     }, 1000);
 }
 

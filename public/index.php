@@ -1,3 +1,24 @@
+<?php 
+function pageController() {
+    $data['to'] = 'michael.d.truong@icloud.com';
+    $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+    $data['message'] = isset($_POST['message']) ? $_POST['message'] : '';
+    $data['email'] = isset($_POST['email']) ? $_POST['message'] : '';
+    $data['send'] = isset($_POST['send']) ? $_POST['send'] : false;
+    $data['subject'] = $data['name'] . " " . $data['email'];
+    return $data;
+}
+extract(pageController());
+
+if ($send == true) {
+    mail($to, $subject, $message);
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -97,11 +118,13 @@
                 Are you interested in working together? Have any questions, comments, or just need a friend to say hi? 
                 You are very welcome to contact me. Then we can create something amazing and later take over the world.
             </div>
+            <iframe name="frame" style="display:none;"></iframe>
             <div class="contactForm">
-                <form method="POST">
-                    <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*">
-                    <input type="text" id="formemail" name="email" class="formtext" placeholder=" Your Email*">
-                    <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*"></textarea>
+                <form method="POST" target="frame">
+                    <input type="hidden" name="send" value="true">
+                    <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*" required="true">
+                    <input type="email" id="formemail" name="email" class="formtext" placeholder=" Your Email*" required="true">
+                    <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*" required="true"></textarea>
                     <button type="submit" id="formsubmit">SEND</button>
                 </form>
             </div>
