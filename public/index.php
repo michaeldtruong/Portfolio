@@ -1,18 +1,18 @@
 <?php 
-function pageController() {
-    $data['to'] = 'michael.d.truong@icloud.com';
-    $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
-    $data['message'] = isset($_POST['message']) ? $_POST['message'] : '';
-    $data['email'] = isset($_POST['email']) ? $_POST['message'] : '';
-    $data['send'] = isset($_POST['send']) ? $_POST['send'] : false;
-    $data['subject'] = $data['name'] . " " . $data['email'];
-    return $data;
-}
-extract(pageController());
+// function pageController() {
+//     $data['to'] = 'michael.d.truong@icloud.com';
+//     $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+//     $data['message'] = isset($_POST['message']) ? $_POST['message'] : '';
+//     $data['email'] = isset($_POST['email']) ? $_POST['message'] : '';
+//     $data['send'] = isset($_POST['send']) ? $_POST['send'] : false;
+//     $data['subject'] = $data['name'] . " " . $data['email'];
+//     return $data;
+// }
+// extract(pageController());
 
-if ($send == true) {
-    mail($to, $subject, $message);
-}
+// if ($send == true) {
+//     mail($to, $subject, $message);
+// }
 
 
 
@@ -120,8 +120,7 @@ if ($send == true) {
             </div>
             <iframe name="frame" style="display:none;"></iframe>
             <div class="contactForm">
-                <form method="POST" target="frame">
-                    <input type="hidden" name="send" value="true">
+                <form method="POST" action="http://formspree.io/michael.d.truong@icloud.com" target="frame">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*" required="true">
                     <input type="email" id="formemail" name="email" class="formtext" placeholder=" Your Email*" required="true">
                     <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*" required="true"></textarea>
