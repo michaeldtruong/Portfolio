@@ -155,6 +155,17 @@ $(window).on('resize', function(){
       }
 });
 
+$('#contactMe').submit(function(ev) { 
+    $('#contactMe').animate({
+        opacity: '0',
+        left: '50px'
+    }, 500);
+    $('.afterSubmit').animate({
+        opacity: '1',
+        left: '50px'
+    }, 500);
+});
+
 window.onload = function() {
     bannerAnimation();
     setInterval(bannerAnimation, 12500);

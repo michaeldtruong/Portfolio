@@ -83,8 +83,8 @@
                     first steps into the digital world of design and development.
                 </div>
                 <div class="externalLinks">
-                    <div class="external" id="git"><img src="/img/git_icon.png" class="externalImage"></div>
-                    <div class="external" id="linkedin"><img src="/img/linkedin_icon.png" class="externalImage"></div>
+                    <div class="external" id="git"><a href="https://github.com/michaeldtruong" target="_blank"><img src="/img/git_icon.png" class="externalImage"></a></div>
+                    <div class="external" id="linkedin"><a href="https://www.linkedin.com/in/michaeldtruong" target="_blank"><img src="/img/linkedin_icon.png" class="externalImage"></a></div>
                     <div class="external" id="dribble"><img src="/img/dribble_icon.png" class="externalImage"></div>
                 </div>
             </div>
@@ -120,7 +120,8 @@
             </div>
             <iframe name="frame" style="display:none;"></iframe>
             <div class="contactForm">
-                <form method="POST" action="http://formspree.io/michael.d.truong@icloud.com" target="frame">
+                <div class='afterSubmit'>Got it. I will get back to you soon.</div>
+                <form method="POST" action="http://formspree.io/michael.d.truong@icloud.com" target="frame" id="contactMe">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*" required="true">
                     <input type="email" id="formemail" name="email" class="formtext" placeholder=" Your Email*" required="true">
                     <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*" required="true"></textarea>

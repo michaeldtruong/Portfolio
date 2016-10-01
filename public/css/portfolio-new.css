@@ -247,8 +247,19 @@ body {
 	color: #f00;
 }
 
+.afterSubmit {
+	position: absolute;
+	top: 60px;
+	left: 0px;
+	opacity: 0;
+}
+
 #bannerTextMobile {
 	display: none;
+}
+
+#contactMe {
+	position: relative;
 }
 
 #formname {
