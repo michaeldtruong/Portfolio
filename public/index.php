@@ -1,23 +1,3 @@
-<?php 
-// function pageController() {
-//     $data['to'] = 'michael.d.truong@icloud.com';
-//     $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
-//     $data['message'] = isset($_POST['message']) ? $_POST['message'] : '';
-//     $data['email'] = isset($_POST['email']) ? $_POST['message'] : '';
-//     $data['send'] = isset($_POST['send']) ? $_POST['send'] : false;
-//     $data['subject'] = $data['name'] . " " . $data['email'];
-//     return $data;
-// }
-// extract(pageController());
-
-// if ($send == true) {
-//     mail($to, $subject, $message);
-// }
-
-
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
