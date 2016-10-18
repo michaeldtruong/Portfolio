@@ -15,7 +15,7 @@ function addBlog(blogs) {
         var content = "";
         content += "<h4>" + blog.title + "</h2>";
         content += "<p>" + blog.content + "</p>";
-        content += blog.date;
+        content += "<p>" + blog.date + "</p>";
         $(".blog").append(content);
     });
 }
