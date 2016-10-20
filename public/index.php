@@ -101,7 +101,7 @@
             <iframe name="frame" style="display:none;"></iframe>
             <div class="contactForm">
                 <div class='afterSubmit'>Got it. I will get back to you soon.</div>
-                <form method="POST" action="http://formspree.io/michael.d.truong@icloud.com" target="frame" id="contactMe">
+                <form method="POST" action="https://formspree.io/michael.d.truong@icloud.com" target="frame" id="contactMe">
                     <input type="text" id="formname" name="name" class="formtext" placeholder=" Your Name*" required="true">
                     <input type="email" id="formemail" name="email" class="formtext" placeholder=" Your Email*" required="true">
                     <textarea type="text" id="formmessage" name="message" class="formtextarea" placeholder=" Your Message*" required="true"></textarea>
