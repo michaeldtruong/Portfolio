@@ -64,7 +64,7 @@
                 </div>
                 <div class="externalLinks">
                     <div class="external" id="git"><a href="https://github.com/michaeldtruong" target="_blank"><img src="/img/git_icon.png" class="externalImage"></a></div>
-                    <div class="external" id="linkedin"><a href="https://www.linkedin.com/in/michaeldtruong" target="_blank"><img src="/img/linkedin_icon.png" class="externalImage"></a></div>
+                    <div class="external" id="linkedin"><a href="https://www.linkedin.com/in/mdtruong" target="_blank"><img src="/img/linkedin_icon.png" class="externalImage"></a></div>
                     <div class="external" id="dribble"><img src="/img/dribble_icon.png" class="externalImage"></div>
                 </div>
             </div>
