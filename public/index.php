@@ -71,6 +71,14 @@
             <div class="aboutPicture"><img src="/img/mike.jpg" class="myPic"></div>
             <div id="portfolioBanner">PORTFOLIO</div>
             <div class="portfolio">
+                <div class="projects" id="project7">
+                    <div class="portContent"><h4>Tanglr</h4>Laravel, VueJS, Pusher WebSocket, API</div>
+                    <div class="portImage"><a href="http://tanglr.io" target="_blank"><img src="/img/tanglr.png" class="projectPictures"></a></div>
+                </div>
+                <div class="projects" id="project6">
+                    <div class="portContent"><h4>photoSHOP</h4>PHP, MVC, Object Oriented Programming</div>
+                    <div class="portImage"><a href="http://adlister.michaeltruong.io" target="_blank"><img src="/img/adlister.png" class="projectPictures"></a></div>
+                </div>
                 <div class="projects" id="project1">
                     <div class="portContent"><h4>Memory Wars</h4>Game Design/Development, Object Oriented Programming, HTML5, CSS3, Javascript, jQuery.</div>
                     <div class="portImage"><a href="/memory-wars.html" target="_blank"><img src="/img/memorywars.png" class="projectPictures"></a></div>
