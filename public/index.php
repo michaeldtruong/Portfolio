@@ -71,6 +71,22 @@
             <div class="aboutPicture"><img src="/img/mike.jpg" class="myPic"></div>
             <div id="portfolioBanner">PORTFOLIO</div>
             <div class="portfolio">
+                <div class="projects" id="project11">
+                    <div class="portContent"><h4>SecureMDs</h4>UI Design, Sass</div>
+                    <div class="portImage"><a href="http://securemds.com" target="_blank"><img src="/img/securemds.png" class="projectPictures"></a></div>
+                </div>
+                <div class="projects" id="project10">
+                    <div class="portContent"><h4>Snackdot Vote</h4>Larave, VueJS</div>
+                    <div class="portImage"><a href="https://vote.snackdot.com/c/e0c10c0a-a42d-448d-a8e4-c881c9e99758/v/96dd3869-3277-4dfe-b23c-56f9f91fdfe5" target="_blank"><img src="/img/sdvote.png" class="projectPictures"></a></div>
+                </div>
+                <div class="projects" id="project9">
+                    <div class="portContent"><h4>Snackdot</h4>UI Design, Sass</div>
+                    <div class="portImage"><a href="http://snackdot.com" target="_blank"><img src="/img/snackdot.png" class="projectPictures"></a></div>
+                </div>
+                <div class="projects" id="project8">
+                    <div class="portContent"><h4>deeproot Private Equity Funds</h4>Sass, Bourbon</div>
+                    <div class="portImage"><a href="https://deeprootfunds.com/" target="_blank"><img src="/img/deeproot.png" class="projectPictures"></a></div>
+                </div>
                 <div class="projects" id="project7">
                     <div class="portContent"><h4>Tanglr</h4>Laravel, VueJS, Pusher WebSocket, API</div>
                     <div class="portImage"><a href="http://tanglr.io" target="_blank"><img src="/img/tanglr.png" class="projectPictures"></a></div>
@@ -92,10 +108,6 @@
                     <div class="portImage"><a href="/calculator.html" target="_blank"><img src="/img/artifact.png" class="projectPictures"></a></div>
                 </div>
                 <div class="projects" id="project4">
-                    <div class="portContent"><h4>4U2Do</h4>HTML5, CSS3, Javascript.</div>
-                    <div class="portImage"><a href="/todolist2.html" target="_blank"><img src="/img/todo.png" class="projectPictures"></a></div>
-                </div>
-                <div class="projects" id="project5">
                     <div class="portContent"><h4>Knotted Fates</h4>Game Design/Development, Level Design, Parallax Mapping, Photoshop</div>
                     <div class="portImage"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/bRubZ8F9Yp4" frameborder="0" allowfullscreen></iframe></div>
                 </div>
